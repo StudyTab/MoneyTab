@@ -12,7 +12,7 @@
   <!-- Main category pages -->
   <url>
     <loc>https://moneytab.in/pages/loans.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,7 +26,7 @@
 
   <url>
     <loc>https://moneytab.in/pages/govt-schemes.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -70,6 +70,22 @@
   <url>
     <loc>https://moneytab.in/pages/articles/stamp-duty-kalinga-nagar-bhubaneswar.html</loc>
     <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Loan articles -->
+  <url>
+    <loc>https://moneytab.in/pages/articles/used-car-loan-rasulgarh-bhubaneswar.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Govt Scheme articles -->
+  <url>
+    <loc>https://moneytab.in/pages/articles/subhadra-yojana-documents-centers-bhubaneswar.html</loc>
+    <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
