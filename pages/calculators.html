@@ -3,106 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free financial calculators for Odisha — EMI, SIP, Home Loan Eligibility, Gold Loan. Simple to use, no sign-up needed. Built for Cuttack and Bhubaneswar residents." />
+  <meta name="description" content="Free financial calculators for Odisha — EMI Calculator, SIP Returns Calculator, Home Loan Eligibility Calculator, Gold Loan Calculator. Simple to use, no sign-up needed." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="MoneyTab.in" />
   <link rel="canonical" href="https://moneytab.in/pages/calculators.html" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://moneytab.in/pages/calculators.html" />
   <meta property="og:title" content="Free Financial Calculators — EMI, SIP, Home Loan, Gold Loan | MoneyTab.in" />
-  <meta property="og:description" content="Free financial calculators for Odisha — EMI, SIP, Home Loan Eligibility, Gold Loan. Simple to use, no sign-up needed. Built for Cuttack and Bhubaneswar residents." />
-  <meta property="og:image" content="https://moneytab.in/images/shared/gold-loan-bapuji-nagar-featured.png" />
+  <meta property="og:description" content="Free financial calculators for Odisha — EMI, SIP, Home Loan Eligibility, Gold Loan. Simple to use, no sign-up needed." />
   <meta property="og:site_name" content="MoneyTab.in" />
   <meta property="og:locale" content="en_IN" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@moneytabin" />
   <meta name="twitter:title" content="Free Financial Calculators — EMI, SIP, Home Loan, Gold Loan | MoneyTab.in" />
-  <meta name="twitter:description" content="Free financial calculators for Odisha — EMI, SIP, Home Loan Eligibility, Gold Loan. Simple to use, no sign-up needed. Built for Cuttack and Bhubaneswar residents." />
-  <meta name="twitter:image" content="https://moneytab.in/images/shared/gold-loan-bapuji-nagar-featured.png" />
-
   <title>Free Financial Calculators — EMI, SIP, Home Loan, Gold Loan | MoneyTab.in</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
-<style>
-    .calc-page-wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
-    .calc-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-    .calc-tab{padding:10px 22px;border:1.5px solid var(--rule);border-radius:99px;font-size:.82rem;font-weight:500;color:var(--muted);cursor:pointer;background:var(--card);transition:all .18s;font-family:'Poppins',sans-serif}
-    .calc-tab.active,.calc-tab:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .calc-panel{display:none}
-    .calc-panel.active{display:block}
-    .calc-widget{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
-    @media(max-width:768px){.calc-widget{grid-template-columns:1fr}}
-    .calc-form{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:30px}
-    .calc-form h3{font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:24px}
-    .calc-result{background:var(--ink);border-radius:8px;padding:30px;display:flex;flex-direction:column;justify-content:center}
-    .calc-result h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:#5a5450;margin-bottom:8px;font-weight:600}
-    .result-big{font-family:'Lora',serif;font-size:2.6rem;font-weight:600;color:#f0a060;line-height:1;margin-bottom:6px}
-    .result-sub{font-size:.82rem;color:#7a7068}
-    .result-breakdown{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-direction:column;gap:12px}
-    .rb-item{display:flex;justify-content:space-between;align-items:center}
-    .rb-label{font-size:.82rem;color:#6a6058}
-    .rb-val{font-size:.88rem;font-weight:600;color:#d4cdc5}
-    .form-group{margin-bottom:22px}
-    .form-group label{display:block;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-    .range-wrap{display:flex;align-items:center;gap:12px}
-    .range-wrap input[type=range]{flex:1;accent-color:var(--accent)}
-    .range-val{font-size:.88rem;font-weight:600;color:var(--accent);min-width:80px;text-align:right}
-    .calc-content{margin-bottom:48px}
-    .calc-content h2{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--rule)}
-    .calc-content p{font-size:.975rem;color:var(--ink-soft);line-height:1.85;margin-bottom:14px}
-    .calc-content ul{padding-left:20px;margin-bottom:16px}
-    .calc-content ul li{font-size:.95rem;color:var(--ink-soft);line-height:1.8;margin-bottom:8px}
-    .calc-content strong{color:var(--ink)}
-    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 28px}
-    @media(max-width:600px){.info-strip{grid-template-columns:1fr}}
-    .info-strip-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px 16px;text-align:center}
-    .info-strip-card .icon{font-size:1.6rem;margin-bottom:8px}
-    .info-strip-card h4{font-family:'Lora',serif;font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:6px}
-    .info-strip-card p{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300;margin:0}
-    .tip-box{background:var(--accent-lt);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:16px 20px;margin:20px 0;font-size:.9rem;color:var(--ink-soft);line-height:1.78}
-    .tip-box strong{color:var(--ink)}
-    .dark-tip{background:var(--ink);border-radius:6px;padding:16px 20px;margin:20px 0;font-size:.875rem;color:#c8c2ba;line-height:1.78;font-weight:300}
-    .dark-tip strong{color:#f0a060;font-weight:600}
-    .formula-box{background:#f4f4f0;border:1px solid var(--rule);border-radius:6px;padding:16px 20px;margin:16px 0 24px;font-size:.875rem;color:var(--ink-soft);line-height:1.7}
-    .formula-box code{font-family:monospace;background:#e8e8e4;padding:2px 6px;border-radius:3px;font-size:.85rem;color:var(--ink)}
-    .faq-list{margin:16px 0 32px;display:grid;gap:10px}
-    .faq-item{background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
-    .faq-q{padding:15px 20px;font-weight:600;font-size:.9rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
-    .faq-q::after{content:"+";font-size:1.2rem;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform .2s}
-    .faq-item.open .faq-q::after{transform:rotate(45deg)}
-    .faq-a{display:none;padding:14px 20px 16px;font-size:.875rem;color:var(--ink-soft);line-height:1.82;border-top:1px solid var(--rule)}
-    .faq-item.open .faq-a{display:block}
-    .video-wrap{margin:32px 0 36px;border-radius:8px;overflow:hidden;border:1px solid var(--rule)}
-    .video-label{background:var(--ink);padding:12px 20px;font-size:.78rem;font-weight:600;color:#f0a060;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
-    .video-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;background:#000}
-    .video-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-    .video-caption{background:#f4f4f0;padding:10px 16px;font-size:.74rem;color:var(--muted);font-style:italic;border-top:1px solid var(--rule)}
-    .calc-disclaimer{background:#f8f8f5;border:1px solid var(--rule);border-radius:6px;padding:14px 18px;font-size:.78rem;color:var(--muted);line-height:1.7;margin-top:16px;text-align:center}
+  <style>
+    .calc-hub-wrap{max-width:1000px;margin:0 auto;padding:48px 24px 80px}
+    .hub-intro{font-size:.975rem;color:var(--ink-soft);line-height:1.85;max-width:700px;margin-bottom:40px}
+    .calc-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:52px}
+    @media(max-width:680px){.calc-cards-grid{grid-template-columns:1fr}}
+    .calc-card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:28px 26px 24px;text-decoration:none;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,transform .18s,border-color .18s;position:relative;overflow:hidden}
+    .calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+    .calc-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-3px);border-color:rgba(200,86,26,.2)}
+    .calc-card:hover::before{transform:scaleX(1)}
+    .cc-icon{font-size:2rem;line-height:1;margin-bottom:4px}
+    .cc-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid rgba(200,86,26,.2);padding:3px 9px;border-radius:4px;align-self:flex-start}
+    .cc-title{font-family:'Lora',serif;font-size:1.15rem;font-weight:600;color:var(--ink);line-height:1.3;margin:0}
+    .cc-desc{font-size:.875rem;color:var(--ink-soft);line-height:1.72;margin:0;font-weight:300;flex:1}
+    .cc-cta{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--accent);margin-top:8px}
+    .cc-cta svg{transition:transform .18s}
+    .calc-card:hover .cc-cta svg{transform:translateX(4px)}
+    .featured-calc-card{display:flex;gap:0;background:var(--card);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:36px;text-decoration:none;transition:box-shadow .2s,transform .18s}
+    .featured-calc-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.1);transform:translateY(-2px)}
+    .fcc-img{width:280px;min-height:170px;object-fit:cover;flex-shrink:0;display:block}
+    @media(max-width:640px){.featured-calc-card{flex-direction:column}.fcc-img{width:100%;height:180px}}
+    .fcc-body{padding:26px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+    .fcc-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid rgba(200,86,26,.2);padding:3px 10px;border-radius:4px;align-self:flex-start}
+    .fcc-title{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--ink);line-height:1.3;margin:0}
+    .fcc-desc{font-size:.875rem;color:var(--ink-soft);line-height:1.72;margin:0;font-weight:300}
+    .fcc-cta{font-size:.82rem;font-weight:600;color:var(--accent);margin-top:4px}
+    .hub-section-title{font-family:'Lora',serif;font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--rule)}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;margin-bottom:48px}
+    @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
+    .why-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:20px 18px;text-align:center}
+    .why-card .wc-icon{font-size:1.8rem;margin-bottom:10px}
+    .why-card h4{font-family:'Lora',serif;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+    .why-card p{font-size:.82rem;color:var(--muted);line-height:1.6;margin:0;font-weight:300}
+    .hub-note{font-size:.82rem;color:var(--muted);line-height:1.7;background:var(--accent-lt);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:14px 18px;margin-top:32px}
+    .hub-note strong{color:var(--ink)}
   </style>
-
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Free Financial Calculators | MoneyTab.in",
-    "url": "https://moneytab.in/pages/calculators.html",
-    "publisher": {
-      "@type": "Organization",
-      "name": "MoneyTab.in",
-      "url": "https://moneytab.in/",
-      "logo": { "@type": "ImageObject", "url": "https://moneytab.in/favicon.svg" }
-    }
-  }
-  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free Financial Calculators | MoneyTab.in","url":"https://moneytab.in/pages/calculators.html","description":"Free financial calculators for Odisha — EMI, SIP Returns, Home Loan Eligibility, and Gold Loan.","publisher":{"@type":"Organization","name":"MoneyTab.in","url":"https://moneytab.in/"}}</script>
 </head>
 <body>
 <header class="site-header">
@@ -112,13 +65,9 @@
   </div>
   <nav class="header-nav">
     <div class="nav-links">
-      <a href="https://moneytab.in">Home</a>
-      <a href="loans.html">Loans</a>
-      <a href="investments.html">Investments</a>
-      <a href="govt-schemes.html">Govt Schemes</a>
-      <a href="calculators.html" class="active">Calculators</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="https://moneytab.in">Home</a><a href="loans.html">Loans</a><a href="investments.html">Investments</a>
+      <a href="govt-schemes.html">Govt Schemes</a><a href="calculators.html" class="active">Calculators</a>
+      <a href="about.html">About</a><a href="contact.html">Contact</a>
     </div>
     <button class="hamburger-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
@@ -132,305 +81,112 @@
 <div class="page-hero">
   <div class="hero-tag">Free Tools</div>
   <h1>Free Financial Calculators</h1>
-  <p>Calculate your EMI, SIP returns, home loan eligibility and gold loan amount in seconds &#8212; no sign-up, no app needed, works right here in your browser.</p>
+  <p>Calculate your EMI, SIP returns, home loan eligibility, and gold loan amount in seconds &#8212; no sign-up, no app needed, works right here in your browser.</p>
 </div>
 <main>
-<div class="calc-page-wrap">
+<div class="calc-hub-wrap">
+  <p class="hub-intro">Good financial decisions start with accurate numbers. These free calculators use the exact formulas that Indian banks and financial institutions use &#8212; so you can plan with confidence before walking into a branch. Pick the calculator you need below:</p>
 
-  <div class="calc-tabs">
-    <button class="calc-tab active" data-target="emi">&#128663; EMI Calculator</button>
-    <button class="calc-tab" data-target="sip">&#128200; SIP Calculator</button>
-    <button class="calc-tab" data-target="homeloan">&#127968; Home Loan Eligibility</button>
-    <button class="calc-tab" data-target="gold">&#129351; Gold Loan Calculator</button>
+  <h2 class="hub-section-title">&#128296; Our Calculators</h2>
+  <div class="calc-cards-grid">
+    <a href="calculators/emi-calculator.html" class="calc-card">
+      <div class="cc-icon">&#128663;</div>
+      <div class="cc-tag">Loans</div>
+      <h3 class="cc-title">General EMI Calculator</h3>
+      <p class="cc-desc">Calculate your exact monthly EMI for personal loans, car loans, and home loans. Set the loan amount, interest rate, and tenure &#8212; get an instant full breakdown of principal, interest, and total repayment.</p>
+      <div class="cc-cta">Open Calculator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="calculators/home-loan-eligibility-calculator.html" class="calc-card">
+      <div class="cc-icon">&#127968;</div>
+      <div class="cc-tag">Home Loan</div>
+      <h3 class="cc-title">Home Loan Eligibility Calculator</h3>
+      <p class="cc-desc">Find out exactly how much home loan your income qualifies for. Based on your net salary, existing EMIs, and tenure &#8212; uses the same FOIR formula Indian banks use to assess eligibility.</p>
+      <div class="cc-cta">Open Calculator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="calculators/sip-returns-calculator.html" class="calc-card">
+      <div class="cc-icon">&#128200;</div>
+      <div class="cc-tag">Investments</div>
+      <h3 class="cc-title">SIP Returns Calculator</h3>
+      <p class="cc-desc">Estimate exactly how your monthly mutual fund SIP will grow over time. See the power of compounding &#8212; how &#8377;5,000/month can become over &#8377;50 lakh in 20 years at 12% returns.</p>
+      <div class="cc-cta">Open Calculator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="calculators/gold-loan-calculator.html" class="calc-card">
+      <div class="cc-icon">&#129351;</div>
+      <div class="cc-tag">Gold Loan</div>
+      <h3 class="cc-title">Gold Loan Calculator</h3>
+      <p class="cc-desc">Check how much loan you can get against your gold jewellery. Enter the weight, purity (18K&#8211;24K), and today&#8217;s gold rate &#8212; applies the RBI-mandated 75% LTV for a realistic estimate.</p>
+      <div class="cc-cta">Open Calculator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
   </div>
 
-  <!-- ═══ EMI ═══ -->
-  <div class="calc-panel active" id="panel-emi">
-    <div class="calc-content">
-      <h2>What is an EMI and How is it Calculated?</h2>
-      <p>EMI stands for <strong>Equated Monthly Instalment</strong> &#8212; the fixed amount you pay your bank every month until your loan is fully repaid. Every EMI has two parts: a portion that repays the original loan (the <strong>principal</strong>), and a portion that pays the bank&#8217;s interest.</p>
-      <p>In the early months, most of your EMI goes towards interest. As time passes, more and more goes to principal. This is the <strong>reducing balance method</strong>, which all Indian banks must use for retail loans by RBI mandate. It is cheaper than the flat rate method used by some older co-operative lenders.</p>
-      <div class="info-strip">
-        <div class="info-strip-card"><div class="icon">&#128197;</div><h4>Tenure Matters</h4><p>A longer tenure = lower monthly EMI, but you pay more total interest. A shorter tenure costs more per month but saves money overall.</p></div>
-        <div class="info-strip-card"><div class="icon">&#128200;</div><h4>Rate Matters More</h4><p>Even a 1% lower interest rate saves thousands over a 3&#8211;5 year loan. Always compare rates at 2&#8211;3 banks before signing.</p></div>
-        <div class="info-strip-card"><div class="icon">&#9989;</div><h4>Check Your CIBIL</h4><p>A CIBIL score above 750 usually gets you the lowest available rate. Check free at cibil.com before applying.</p></div>
-      </div>
-      <div class="formula-box">
-        <strong>EMI Formula:</strong> <code>EMI = P &times; r &times; (1+r)&#x207F; &divide; ((1+r)&#x207F; &#8722; 1)</code><br/>
-        Where <code>P</code> = Loan amount &nbsp;|&nbsp; <code>r</code> = Monthly rate (annual rate &#247; 12 &#247; 100) &nbsp;|&nbsp; <code>n</code> = Months
-      </div>
-      <div class="tip-box"><strong>&#128161; Practical tip for Odisha residents:</strong> Before taking any loan, check that the EMI fits within 40% of your monthly take-home salary. Banks approve loans only if your total EMI obligations stay below 45&#8211;50% of income.</div>
+  <h2 class="hub-section-title">&#9889; Featured: Scheme Calculator</h2>
+  <a href="articles/pm-surya-ghar-emi-calculator.html" class="featured-calc-card">
+    <img src="../images/shared/pm-surya-ghar-emi-calculator-featured.png" alt="PM Surya Ghar Yojana EMI Calculator" class="fcc-img" loading="lazy" onerror="this.style.display='none'" />
+    <div class="fcc-body">
+      <div class="fcc-tag">&#9889; Govt Scheme Calculator</div>
+      <h2 class="fcc-title">PM Surya Ghar Yojana EMI Calculator</h2>
+      <p class="fcc-desc">Find out your exact monthly solar loan payment after the central subsidy is deducted. Tiered subsidy auto-applied &#8212; a 3kW system saves &#8377;78,000 off your loan. Ideal for Cuttack and Bhubaneswar homeowners exploring solar rooftop installation.</p>
+      <span class="fcc-cta">Open Calculator &#8594;</span>
     </div>
-    <div class="calc-widget">
-      <div class="calc-form">
-        <h3>Loan EMI Calculator</h3>
-        <div class="form-group"><label>Loan Amount (&#8377;)</label><div class="range-wrap"><input type="range" id="emi-amount" min="10000" max="5000000" step="10000" value="500000" oninput="calcEMI()"><span class="range-val" id="emi-amount-val">&#8377;5,00,000</span></div></div>
-        <div class="form-group"><label>Interest Rate (% per annum)</label><div class="range-wrap"><input type="range" id="emi-rate" min="5" max="25" step="0.1" value="10" oninput="calcEMI()"><span class="range-val" id="emi-rate-val">10.0%</span></div></div>
-        <div class="form-group"><label>Loan Tenure (Months)</label><div class="range-wrap"><input type="range" id="emi-tenure" min="6" max="360" step="6" value="60" oninput="calcEMI()"><span class="range-val" id="emi-tenure-val">60 mo</span></div></div>
-      </div>
-      <div class="calc-result">
-        <h3>Monthly EMI</h3>
-        <div class="result-big" id="emi-result">&#8377;10,624</div>
-        <div class="result-sub" id="emi-sub">per month for 60 months</div>
-        <div class="result-breakdown">
-          <div class="rb-item"><span class="rb-label">Principal Amount</span><span class="rb-val" id="emi-principal">&#8377;5,00,000</span></div>
-          <div class="rb-item"><span class="rb-label">Total Interest</span><span class="rb-val" id="emi-interest">&#8377;1,37,480</span></div>
-          <div class="rb-item"><span class="rb-label">Total Payment</span><span class="rb-val" id="emi-total">&#8377;6,37,480</span></div>
-        </div>
-      </div>
+  </a>
+
+  <h2 class="hub-section-title">Why Use MoneyTab&#8217;s Calculators?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="wc-icon">&#9989;</div>
+      <h4>Bank-Standard Formulas</h4>
+      <p>Every calculator uses the same mathematical formula that Indian banks and RBI-regulated lenders use &#8212; no guesswork, no approximations.</p>
     </div>
-    <div class="calc-content">
-      <h2>How to Use This Calculator</h2>
-      <p>Move the three sliders: set your <strong>loan amount</strong> (how much you want to borrow), the <strong>interest rate</strong> your bank quoted, and the <strong>tenure</strong> in months. The result shows your monthly EMI, total interest, and total repayment instantly.</p>
-      <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">What is the difference between flat rate and reducing balance EMI?</div><div class="faq-a">A flat rate loan charges interest on the full original amount every month. A reducing balance loan (used by all banks in India for retail loans) charges interest only on what you still owe. Reducing balance is cheaper. This calculator uses the reducing balance method.</div></div>
-        <div class="faq-item"><div class="faq-q">Can I reduce my EMI after taking a loan?</div><div class="faq-a">Yes. You can make a partial prepayment to reduce either your EMI or remaining tenure. If RBI cuts the repo rate, you can also request your bank to reduce your interest rate &#8212; for home loans this often happens automatically under floating rate agreements.</div></div>
-        <div class="faq-item"><div class="faq-q">Why does the bank quote a slightly different EMI?</div><div class="faq-a">Minor differences occur due to processing fees added to the loan, the exact disbursal date, GST charges, or rounding. The difference is usually within &#8377;10&#8211;50 per month. Always ask for a written amortisation (repayment) schedule before signing.</div></div>
-      </div>
+    <div class="why-card">
+      <div class="wc-icon">&#128274;</div>
+      <h4>No Sign-Up Required</h4>
+      <p>No account, no phone number, no personal details needed. All calculations happen instantly in your browser &#8212; nothing is sent to any server.</p>
+    </div>
+    <div class="why-card">
+      <div class="wc-icon">&#127968;</div>
+      <h4>Built for Odisha</h4>
+      <p>Pre-filled with local context &#8212; typical salary ranges, current gold rates, and SBI&#8217;s home loan rate &#8212; so results are relevant for Cuttack and Bhubaneswar residents.</p>
     </div>
   </div>
-
-  <!-- ═══ SIP ═══ -->
-  <div class="calc-panel" id="panel-sip">
-    <div class="calc-content">
-      <h2>What is a SIP and Why Should You Start One?</h2>
-      <p>SIP stands for <strong>Systematic Investment Plan</strong>. It is the simplest way to invest in mutual funds &#8212; instead of putting a large amount in one go, you invest a small fixed amount every month (as little as &#8377;500) into a mutual fund of your choice.</p>
-      <p>Over time, SIP uses <strong>rupee cost averaging</strong>: when markets are low, your &#8377;500 buys more units; when markets are high, it buys fewer. This automatically reduces your average purchase cost. Combined with <strong>compounding</strong> &#8212; where your returns start earning further returns &#8212; this creates powerful wealth over 10&#8211;20 years.</p>
-      <div class="info-strip">
-        <div class="info-strip-card"><div class="icon">&#128197;</div><h4>Start Early</h4><p>Investing &#8377;3,000/month for 20 years builds far more wealth than &#8377;6,000/month for 10 years, even with the same total invested. Time is everything.</p></div>
-        <div class="info-strip-card"><div class="icon">&#128200;</div><h4>Stay Invested</h4><p>Don&#8217;t stop SIP when markets fall. Dips are opportunities &#8212; your money buys more units at lower prices, which helps when markets recover.</p></div>
-        <div class="info-strip-card"><div class="icon">&#9989;</div><h4>12% is Realistic</h4><p>Long-term equity mutual funds in India have historically returned 11&#8211;14% annually over 10+ year periods. 12% is a reasonable planning assumption.</p></div>
-      </div>
-      <div class="tip-box"><strong>&#128161; Local tip:</strong> You do not need a broker to start a SIP in Cuttack or Bhubaneswar. Use apps like <strong>Groww, Zerodha Coin, or Paytm Money</strong> with just your Aadhaar and PAN. Minimum SIP is as low as &#8377;100&#8211;500 per month at most funds.</div>
-    </div>
-    <div class="calc-widget">
-      <div class="calc-form">
-        <h3>SIP Returns Calculator</h3>
-        <div class="form-group"><label>Monthly SIP Amount (&#8377;)</label><div class="range-wrap"><input type="range" id="sip-amount" min="500" max="100000" step="500" value="5000" oninput="calcSIP()"><span class="range-val" id="sip-amount-val">&#8377;5,000</span></div></div>
-        <div class="form-group"><label>Expected Annual Return (%)</label><div class="range-wrap"><input type="range" id="sip-rate" min="5" max="25" step="0.5" value="12" oninput="calcSIP()"><span class="range-val" id="sip-rate-val">12.0%</span></div></div>
-        <div class="form-group"><label>Investment Period (Years)</label><div class="range-wrap"><input type="range" id="sip-years" min="1" max="40" step="1" value="10" oninput="calcSIP()"><span class="range-val" id="sip-years-val">10 yrs</span></div></div>
-      </div>
-      <div class="calc-result">
-        <h3>Estimated Corpus</h3>
-        <div class="result-big" id="sip-result">&#8377;11.62L</div>
-        <div class="result-sub" id="sip-sub">after 10 years</div>
-        <div class="result-breakdown">
-          <div class="rb-item"><span class="rb-label">Total Invested</span><span class="rb-val" id="sip-invested">&#8377;6,00,000</span></div>
-          <div class="rb-item"><span class="rb-label">Wealth Gained</span><span class="rb-val" id="sip-gain">&#8377;5,61,695</span></div>
-          <div class="rb-item"><span class="rb-label">Total Value</span><span class="rb-val" id="sip-total">&#8377;11,61,695</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="video-wrap">
-      <div class="video-label">
-        <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#ff0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        Video: How SIP Works &amp; Why You Should Start Now (YouTube)
-      </div>
-      <div class="video-iframe-wrap">
-        <iframe src="https://www.youtube.com/embed/UiSNHBQlMb0?rel=0&modestbranding=1" title="What is SIP? How Systematic Investment Plan Works in India" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="video-caption">&#9432; Video: A clear explanation of how SIP works in India, with real examples of how small monthly investments grow into large wealth over time.</div>
-    </div>
-    <div class="calc-content">
-      <h2>SIP vs Lump Sum &#8212; Which is Better?</h2>
-      <p>If you have savings and are wondering whether to invest all at once or through SIP, most financial experts recommend SIP for regular salaried people because:</p>
-      <ul>
-        <li>You don&#8217;t need to time the market &#8212; you invest regardless of whether markets are up or down</li>
-        <li>It builds financial discipline &#8212; money is deducted automatically before you spend it</li>
-        <li>Rupee cost averaging reduces your average purchase cost over time</li>
-        <li>You can start small (&#8377;500/month) and increase as your income grows</li>
-      </ul>
-      <div class="dark-tip"><strong>&#128161; Remember:</strong> Mutual fund returns are market-linked and not guaranteed. The 12% default rate is a reasonable long-term estimate for equity funds based on historical Nifty performance &#8212; actual returns may be higher or lower. Always invest based on your risk tolerance and goals.</div>
-    </div>
-  </div>
-
-  <!-- ═══ HOME LOAN ═══ -->
-  <div class="calc-panel" id="panel-homeloan">
-    <div class="calc-content">
-      <h2>How Do Banks Decide Your Home Loan Eligibility?</h2>
-      <p>Banks look at one main thing: <strong>can you comfortably pay the EMI every month?</strong> They use your income, existing loan EMIs, and a rule called <strong>FOIR (Fixed Obligation to Income Ratio)</strong>. Most banks in India allow your total monthly loan repayments to go up to <strong>45&#8211;50% of your net monthly income</strong>. This calculator uses 45% as the standard.</p>
-      <p>For example: a net salary of &#8377;50,000 and existing EMIs of &#8377;8,000 gives you &#8377;14,500 available EMI capacity. At 8.5% for 20 years, that translates to an eligible loan of roughly <strong>&#8377;15&#8211;16 lakh</strong>.</p>
-      <div class="tip-box"><strong>&#128161; Important:</strong> This is an estimate. Actual loan sanctioned also depends on your CIBIL score, the property&#8217;s value and legal status, your employer type, and whether you apply jointly with a co-applicant. Always get a formal pre-approval letter from the bank before finalising any property purchase.</div>
-    </div>
-    <div class="calc-widget">
-      <div class="calc-form">
-        <h3>Home Loan Eligibility</h3>
-        <div class="form-group"><label>Monthly Net Salary (&#8377;)</label><div class="range-wrap"><input type="range" id="hl-salary" min="10000" max="500000" step="5000" value="50000" oninput="calcHL()"><span class="range-val" id="hl-salary-val">&#8377;50,000</span></div></div>
-        <div class="form-group"><label>Existing EMI Obligations (&#8377;/month)</label><div class="range-wrap"><input type="range" id="hl-emi" min="0" max="100000" step="1000" value="5000" oninput="calcHL()"><span class="range-val" id="hl-emi-val">&#8377;5,000</span></div></div>
-        <div class="form-group"><label>Loan Tenure (Years)</label><div class="range-wrap"><input type="range" id="hl-tenure" min="5" max="30" step="5" value="20" oninput="calcHL()"><span class="range-val" id="hl-tenure-val">20 yrs</span></div></div>
-      </div>
-      <div class="calc-result">
-        <h3>Eligible Loan Amount</h3>
-        <div class="result-big" id="hl-result">&#8377;38.7L</div>
-        <div class="result-sub">approx. at 8.5% p.a.</div>
-        <div class="result-breakdown">
-          <div class="rb-item"><span class="rb-label">Max EMI (45% of salary)</span><span class="rb-val" id="hl-max-emi">&#8377;22,500</span></div>
-          <div class="rb-item"><span class="rb-label">Available EMI</span><span class="rb-val" id="hl-avail-emi">&#8377;17,500</span></div>
-          <div class="rb-item"><span class="rb-label">Rate Assumed</span><span class="rb-val">8.5% p.a.</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="calc-content">
-      <h2>5 Ways to Increase Your Home Loan Eligibility</h2>
-      <ul>
-        <li><strong>Clear existing loans first.</strong> Every existing EMI reduces how much home loan you can get. Closing a small personal or vehicle loan before applying can meaningfully increase your eligibility.</li>
-        <li><strong>Add a co-applicant.</strong> If your spouse or parent earns income, adding them as co-applicant combines both incomes. This is one of the most effective ways to get a larger loan amount.</li>
-        <li><strong>Improve your CIBIL score.</strong> Most banks require 700+ for home loans. A score above 750 gets you better rates and higher amounts. Check at cibil.com for free.</li>
-        <li><strong>Show additional income.</strong> Rental income, freelance earnings, or agricultural income can be counted if properly documented with bank statements and tax returns.</li>
-        <li><strong>Choose a longer tenure.</strong> A 25 or 30-year tenure lowers the monthly EMI, which increases your eligible loan amount. You can always prepay later without penalty on most bank home loans.</li>
-      </ul>
-      <div class="faq-list">
-        <div class="faq-item"><div class="faq-q">What is the minimum salary to get a home loan in Cuttack?</div><div class="faq-a">Most banks in Cuttack require a minimum net monthly income of &#8377;15,000&#8211;&#8377;20,000. However, for a meaningful home loan (&#8377;15&#8211;20 lakh+), most applicants in Cuttack have a monthly income of &#8377;30,000 or above.</div></div>
-        <div class="faq-item"><div class="faq-q">Is there a government subsidy for home loans in Odisha?</div><div class="faq-a">Yes. Under <strong>Pradhan Mantri Awas Yojana (Urban)</strong>, eligible first-time home buyers in Cuttack can get an interest subsidy of 3&#8211;6.5% depending on your income category (EWS, LIG, MIG). Visit your bank or the Cuttack Municipal Corporation office to check eligibility.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ GOLD LOAN ═══ -->
-  <div class="calc-panel" id="panel-gold">
-    <div class="calc-content">
-      <h2>How Much Can You Borrow Against Your Gold?</h2>
-      <p>A gold loan lets you pledge your jewellery at a bank or NBFC and get cash immediately &#8212; without selling the gold. The bank stores your jewellery safely in their vault while you use the money, and returns it when you repay.</p>
-      <p>The loan amount depends on: the <strong>current gold market price</strong> and the <strong>LTV ratio</strong> (Loan-to-Value). The RBI allows banks to lend up to <strong>75% of the gold&#8217;s value</strong>. Banks also use about 90&#8211;95% of the MCX market rate (not the full jeweller&#8217;s rate) to calculate value &#8212; this calculator uses 92%.</p>
-      <div class="info-strip">
-        <div class="info-strip-card"><div class="icon">&#129351;</div><h4>22K is Most Common</h4><p>Most household jewellery in Odisha is 22-karat. Banks accept 18K to 24K. Higher purity = higher loan per gram.</p></div>
-        <div class="info-strip-card"><div class="icon">&#128683;</div><h4>Stones Don&#8217;t Count</h4><p>Diamonds, rubies, and other stones are excluded from the gold valuation. Only the pure gold weight is counted.</p></div>
-        <div class="info-strip-card"><div class="icon">&#128197;</div><h4>Check Today&#8217;s Rate</h4><p>Gold prices change daily. Google &#8220;MCX gold rate today&#8221; before visiting the bank to estimate your loan amount accurately.</p></div>
-      </div>
-    </div>
-    <div class="calc-widget">
-      <div class="calc-form">
-        <h3>Gold Loan Calculator</h3>
-        <div class="form-group"><label>Gold Weight (grams)</label><div class="range-wrap"><input type="range" id="gl-weight" min="1" max="500" step="1" value="20" oninput="calcGL()"><span class="range-val" id="gl-weight-val">20g</span></div></div>
-        <div class="form-group"><label>Gold Purity</label><div class="range-wrap"><input type="range" id="gl-purity" min="18" max="24" step="2" value="22" oninput="calcGL()"><span class="range-val" id="gl-purity-val">22K</span></div></div>
-        <div class="form-group"><label>Gold Rate Today (&#8377;/gram, 24K)</label><div class="range-wrap"><input type="range" id="gl-rate" min="5000" max="12000" step="100" value="9200" oninput="calcGL()"><span class="range-val" id="gl-rate-val">&#8377;9,200</span></div></div>
-      </div>
-      <div class="calc-result">
-        <h3>Approx. Loan Amount</h3>
-        <div class="result-big" id="gl-result">&#8377;1.28L</div>
-        <div class="result-sub">at 75% LTV (bank standard)</div>
-        <div class="result-breakdown">
-          <div class="rb-item"><span class="rb-label">Market Value of Gold</span><span class="rb-val" id="gl-market">&#8377;1,70,320</span></div>
-          <div class="rb-item"><span class="rb-label">Loan at 75% LTV</span><span class="rb-val" id="gl-ltv">&#8377;1,27,740</span></div>
-          <div class="rb-item"><span class="rb-label">Note</span><span class="rb-val" style="font-size:.75rem;color:#5a5450">Banks use ~92% of market rate</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="calc-content">
-      <h2>Gold Loan vs Personal Loan &#8212; Which is Better?</h2>
-      <ul>
-        <li><strong>Interest rate:</strong> Gold loan at banks starts from 8.75&#8211;12%. Personal loan is 11&#8211;22%. Gold loans are significantly cheaper.</li>
-        <li><strong>Speed:</strong> Gold loan can be processed in 1&#8211;2 hours at the branch. Personal loans take 1&#8211;5 working days.</li>
-        <li><strong>No income proof needed:</strong> Gold loans don&#8217;t require salary slips or ITR. Personal loans always do.</li>
-        <li><strong>No CIBIL check:</strong> Gold loans are secured by the gold itself, so your credit score is not checked. Personal loans are heavily dependent on CIBIL.</li>
-      </ul>
-      <p>If you have gold and need money urgently at a low rate, a gold loan from SBI or Canara Bank is almost always the smarter choice over a personal loan.</p>
-      <div class="dark-tip"><strong>&#128161; Read our guide:</strong> See our full verified guide on <a href="articles/gold-loan-bapuji-nagar-bhubaneswar.html" style="color:#f0a060">gold loan rates in Bapuji Nagar, Bhubaneswar</a> with exact branch addresses, phone numbers, and March 2026 rates at SBI, Canara Bank, and UCO Bank.</div>
-    </div>
-  </div>
-
-  <div class="calc-disclaimer">&#9432; All calculator results are estimates only. Actual EMIs, loan amounts, and investment returns depend on your bank&#8217;s specific policies, prevailing market conditions, and individual circumstances. Always verify with your lender before making financial decisions. MoneyTab.in is not a financial advisor. See our <a href="disclaimer.html">Disclaimer</a>.</div>
-
+  <div class="hub-note"><strong>&#9432; Disclaimer:</strong> All calculator results are estimates only. Actual EMIs, loan amounts, and investment returns depend on your lender&#8217;s specific policies, prevailing market conditions, and individual circumstances. Always verify with your bank before making financial decisions. See our <a href="disclaimer.html">Disclaimer</a>.</div>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-brand">
       <a href="https://moneytab.in" class="footer-logo">Money<span>Tab</span>.in</a>
-      <p>Odisha&#39;s most trusted guide to local finance &#8212; loans, schemes, investments, and calculators. All rates verified at local branches in Cuttack &amp; Bhubaneswar.</p>
+      <p>Odisha&#39;s most trusted guide to local finance &#8212; loans, schemes, investments, and calculators.</p>
       <div class="footer-social">
         <a href="https://twitter.com/moneytabin" target="_blank" rel="noopener" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://youtube.com/@moneytabin" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
     </div>
-    <div class="footer-col"><h4>Guides</h4><ul>
-      <li><a href="loans.html">Local Loans</a></li><li><a href="investments.html">Investments</a></li>
-      <li><a href="govt-schemes.html">Govt Schemes</a></li><li><a href="calculators.html">Calculators</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Company</h4><ul>
-      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="advertise.html">Advertise</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul>
-      <li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li>
-      <li><a href="terms.html">Terms of Use</a></li><li><a href="editorial-policy.html">Editorial Policy</a></li><li><a href="disclaimer.html">Disclaimer</a></li>
-    </ul></div>
+    <div class="footer-col"><h4>Guides</h4><ul><li><a href="loans.html">Local Loans</a></li><li><a href="investments.html">Investments</a></li><li><a href="govt-schemes.html">Govt Schemes</a></li><li><a href="calculators.html">Calculators</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="advertise.html">Advertise</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="editorial-policy.html">Editorial Policy</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-bottom-row1">
       <span class="footer-copy">&#169; 2026 MoneyTab.in &nbsp;&#183;&nbsp; Built with <span class="heart">&#9829;</span> from Cuttack, Odisha</span>
-      <div class="footer-legal-links">
-        <a href="privacy-policy.html">Privacy</a><a href="cookie-policy.html">Cookies</a>
-        <a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a>
-      </div>
+      <div class="footer-legal-links"><a href="privacy-policy.html">Privacy</a><a href="cookie-policy.html">Cookies</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div>
     </div>
     <p class="footer-disclaimer-line">All information on MoneyTab.in is for general informational purposes only. MoneyTab.in is not a financial advisor. See our <a href="disclaimer.html">Disclaimer</a>.</p>
   </div>
 </footer>
-
 <div class="cookie-consent" id="cookieBanner">
   <div class="cookie-consent-inner">
-    <div class="cookie-left">
-      <span class="cookie-icon">&#127850;</span>
-      <div class="cookie-text-wrap">
-        <div class="cookie-title">We use cookies on MoneyTab.in</div>
-        <p class="cookie-text">We use cookies to improve your experience. Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="cookie-policy.html">Cookie Policy</a>.</p>
-      </div>
-    </div>
-    <div class="cookie-buttons">
-      <button class="cookie-btn cookie-settings" id="cookieSettings">Manage</button>
-      <button class="cookie-btn cookie-decline" id="cookieDecline">Reject All</button>
-      <button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button>
-    </div>
+    <div class="cookie-left"><span class="cookie-icon">&#127850;</span><div class="cookie-text-wrap"><div class="cookie-title">We use cookies on MoneyTab.in</div><p class="cookie-text">We use cookies to improve your experience. Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="cookie-policy.html">Cookie Policy</a>.</p></div></div>
+    <div class="cookie-buttons"><button class="cookie-btn cookie-settings" id="cookieSettings">Manage</button><button class="cookie-btn cookie-decline" id="cookieDecline">Reject All</button><button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button></div>
   </div>
 </div>
-
 <script>
   document.getElementById('menuBtn').addEventListener('click',function(){ document.getElementById('mobileMenu').classList.toggle('open'); });
   (function(){
-    // Show cookie banner if not yet consented (small delay for page render)
-    if(!localStorage.getItem('mtCookieConsent')){
-      setTimeout(function(){
-        document.getElementById('cookieBanner').classList.add('show');
-      }, 600);
-    }
-    document.getElementById('cookieAccept').addEventListener('click', function(){
-      localStorage.setItem('mtCookieConsent','accepted');
-      document.getElementById('cookieBanner').classList.remove('show');
-    });
-    document.getElementById('cookieDecline').addEventListener('click', function(){
-      localStorage.setItem('mtCookieConsent','declined');
-      document.getElementById('cookieBanner').classList.remove('show');
-    });
-    if(document.getElementById('cookieSettings')){
-      document.getElementById('cookieSettings').addEventListener('click', function(){
-        var el = document.querySelector('#cookieBanner a[href*="cookie-policy"]');
-        window.location.href = el ? el.getAttribute('href') : 'cookie-policy.html';
-      });
-    }
+    if(!localStorage.getItem('mtCookieConsent')){ setTimeout(function(){ document.getElementById('cookieBanner').classList.add('show'); },600); }
+    document.getElementById('cookieAccept').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','accepted'); document.getElementById('cookieBanner').classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','declined'); document.getElementById('cookieBanner').classList.remove('show'); });
+    if(document.getElementById('cookieSettings')){ document.getElementById('cookieSettings').addEventListener('click',function(){ window.location.href='cookie-policy.html'; }); }
   })();
-  document.querySelectorAll('.calc-tab').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.calc-tab').forEach(function(b){ b.classList.remove('active'); });
-      document.querySelectorAll('.calc-panel').forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      document.getElementById('panel-'+btn.dataset.target).classList.add('active');
-    });
-  });
-  document.querySelectorAll('.faq-q').forEach(function(q){
-    q.addEventListener('click',function(){
-      var item=q.closest('.faq-item'); var isOpen=item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-      if(!isOpen) item.classList.add('open');
-    });
-  });
-  function fmt(n){ return '₹'+Math.round(n).toLocaleString('en-IN'); }
-  function fmtL(n){ if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr'; if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L'; return fmt(n); }
-  function calcEMI(){var P=+document.getElementById('emi-amount').value;var r=+document.getElementById('emi-rate').value/1200;var n=+document.getElementById('emi-tenure').value;document.getElementById('emi-amount-val').textContent=fmt(P);document.getElementById('emi-rate-val').textContent=(r*1200).toFixed(1)+'%';document.getElementById('emi-tenure-val').textContent=n+' mo';var emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);var total=emi*n;var interest=total-P;document.getElementById('emi-result').textContent=fmt(emi);document.getElementById('emi-sub').textContent='per month for '+n+' months';document.getElementById('emi-principal').textContent=fmt(P);document.getElementById('emi-interest').textContent=fmt(interest);document.getElementById('emi-total').textContent=fmt(total);}
-  function calcSIP(){var m=+document.getElementById('sip-amount').value;var r=+document.getElementById('sip-rate').value/1200;var n=+document.getElementById('sip-years').value*12;document.getElementById('sip-amount-val').textContent=fmt(m);document.getElementById('sip-rate-val').textContent=(r*1200).toFixed(1)+'%';document.getElementById('sip-years-val').textContent=(n/12)+' yrs';var fv=r===0?m*n:m*(Math.pow(1+r,n)-1)/r*(1+r);var invested=m*n;var gain=fv-invested;document.getElementById('sip-result').textContent=fmtL(fv);document.getElementById('sip-sub').textContent='after '+(n/12)+' years';document.getElementById('sip-invested').textContent=fmt(invested);document.getElementById('sip-gain').textContent=fmt(gain);document.getElementById('sip-total').textContent=fmtL(fv);}
-  function calcHL(){var sal=+document.getElementById('hl-salary').value;var exist=+document.getElementById('hl-emi').value;var yrs=+document.getElementById('hl-tenure').value;document.getElementById('hl-salary-val').textContent=fmt(sal);document.getElementById('hl-emi-val').textContent=fmt(exist);document.getElementById('hl-tenure-val').textContent=yrs+' yrs';var maxEMI=sal*0.45;var availEMI=Math.max(0,maxEMI-exist);var r=8.5/1200;var n=yrs*12;var loan=availEMI*(Math.pow(1+r,n)-1)/(r*Math.pow(1+r,n));document.getElementById('hl-result').textContent=fmtL(loan);document.getElementById('hl-max-emi').textContent=fmt(maxEMI);document.getElementById('hl-avail-emi').textContent=fmt(availEMI);}
-  function calcGL(){var wt=+document.getElementById('gl-weight').value;var pur=+document.getElementById('gl-purity').value;var rate=+document.getElementById('gl-rate').value;document.getElementById('gl-weight-val').textContent=wt+'g';document.getElementById('gl-purity-val').textContent=pur+'K';document.getElementById('gl-rate-val').textContent='₹'+rate.toLocaleString('en-IN');var pureGold=wt*(pur/24);var marketVal=pureGold*rate*0.92;var loanVal=marketVal*0.75;document.getElementById('gl-result').textContent=fmtL(loanVal);document.getElementById('gl-market').textContent=fmt(marketVal);document.getElementById('gl-ltv').textContent=fmt(loanVal);}
-  calcEMI(); calcSIP(); calcHL(); calcGL();
 </script>
 </body>
 </html>
