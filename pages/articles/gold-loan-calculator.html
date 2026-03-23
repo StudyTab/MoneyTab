@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free Gold Loan Calculator — find out exactly how much loan you can get against your gold jewellery based on today's gold rate, purity, and weight. For Odisha residents." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="MoneyTab.in" />
+  <link rel="canonical" href="https://moneytab.in/pages/calculators/gold-loan-calculator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moneytab.in/pages/calculators/gold-loan-calculator.html" />
+  <meta property="og:title" content="Gold Loan Calculator — How Much Can You Borrow? | MoneyTab.in" />
+  <meta property="og:description" content="Check how much loan you can get against your gold jewellery. Enter weight, purity, and today's rate — get instant results with the 75% LTV bank standard." />
+  <meta property="og:site_name" content="MoneyTab.in" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@moneytabin" />
+  <meta name="twitter:title" content="Gold Loan Calculator — How Much Can You Borrow? | MoneyTab.in" />
+  <meta name="twitter:description" content="Check how much loan you can get against your gold jewellery — free calculator with instant results." />
+
+  <title>Gold Loan Calculator — How Much Can You Borrow Against Your Jewellery? | MoneyTab.in</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <style>
+    .calc-page-wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+    .calc-widget{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+    @media(max-width:768px){.calc-widget{grid-template-columns:1fr}}
+    .calc-form{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:30px}
+    .calc-form h3{font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:24px}
+    .calc-result{background:var(--ink);border-radius:8px;padding:30px;display:flex;flex-direction:column;justify-content:center}
+    .calc-result h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:#5a5450;margin-bottom:8px;font-weight:600}
+    .result-big{font-family:'Lora',serif;font-size:2.6rem;font-weight:600;color:#f0a060;line-height:1;margin-bottom:6px}
+    .result-sub{font-size:.82rem;color:#7a7068}
+    .result-breakdown{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-direction:column;gap:12px}
+    .rb-item{display:flex;justify-content:space-between;align-items:center}
+    .rb-label{font-size:.82rem;color:#6a6058}
+    .rb-val{font-size:.88rem;font-weight:600;color:#d4cdc5}
+    .form-group{margin-bottom:22px}
+    .form-group label{display:block;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .range-wrap{display:flex;align-items:center;gap:12px}
+    .range-wrap input[type=range]{flex:1;accent-color:var(--accent)}
+    .range-val{font-size:.88rem;font-weight:600;color:var(--accent);min-width:80px;text-align:right}
+    .calc-content{margin-bottom:40px}
+    .calc-content h2{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--rule)}
+    .calc-content p{font-size:.975rem;color:var(--ink-soft);line-height:1.85;margin-bottom:14px}
+    .calc-content ul{padding-left:20px;margin-bottom:16px}
+    .calc-content ul li{font-size:.95rem;color:var(--ink-soft);line-height:1.8;margin-bottom:8px}
+    .calc-content strong{color:var(--ink)}
+    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 28px}
+    @media(max-width:600px){.info-strip{grid-template-columns:1fr}}
+    .info-strip-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px 16px;text-align:center}
+    .info-strip-card .icon{font-size:1.6rem;margin-bottom:8px}
+    .info-strip-card h4{font-family:'Lora',serif;font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+    .info-strip-card p{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300;margin:0}
+    .tip-box{background:var(--accent-lt);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:16px 20px;margin:20px 0;font-size:.9rem;color:var(--ink-soft);line-height:1.78}
+    .tip-box strong{color:var(--ink)}
+    .dark-tip{background:var(--ink);border-radius:6px;padding:16px 20px;margin:20px 0;font-size:.875rem;color:#c8c2ba;line-height:1.78;font-weight:300}
+    .dark-tip strong{color:#f0a060;font-weight:600}
+    .faq-list{margin:16px 0 32px;display:grid;gap:10px}
+    .faq-item{background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+    .faq-q{padding:15px 20px;font-weight:600;font-size:.9rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+    .faq-q::after{content:"+";font-size:1.2rem;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform .2s}
+    .faq-item.open .faq-q::after{transform:rotate(45deg)}
+    .faq-a{display:none;padding:14px 20px 16px;font-size:.875rem;color:var(--ink-soft);line-height:1.82;border-top:1px solid var(--rule)}
+    .faq-item.open .faq-a{display:block}
+    .example-table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:.875rem}
+    .example-table th{background:var(--ink);color:#d4cdc5;padding:10px 14px;text-align:left;font-weight:600;font-size:.8rem;letter-spacing:.04em}
+    .example-table td{padding:10px 14px;border-bottom:1px solid var(--rule);color:var(--ink-soft)}
+    .example-table tr:last-child td{border-bottom:none}
+    .example-table tr:nth-child(even) td{background:#f7f7f4}
+    .calc-disclaimer{background:#f8f8f5;border:1px solid var(--rule);border-radius:6px;padding:14px 18px;font-size:.78rem;color:var(--muted);line-height:1.7;margin-top:16px;text-align:center}
+    .related-section{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:28px 28px 20px;margin-top:48px}
+    .related-section h3{font-family:'Lora',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+    .related-section .rs-sub{font-size:.875rem;color:var(--muted);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+    .related-links{display:grid;gap:10px}
+    .related-link-item{display:flex;align-items:flex-start;gap:10px;font-size:.9rem}
+    .related-link-item a{color:var(--accent);font-weight:500}
+    .related-link-item a:hover{text-decoration:underline}
+    .related-link-item span{color:var(--ink-soft)}
+    .page-intro{font-size:.975rem;color:var(--ink-soft);line-height:1.85;margin-bottom:32px;max-width:680px}
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Gold Loan Calculator — How Much Can You Borrow? | MoneyTab.in",
+    "url": "https://moneytab.in/pages/calculators/gold-loan-calculator.html",
+    "description": "Free gold loan calculator. Enter weight, purity, and today's gold rate to instantly estimate how much loan you can get against your jewellery.",
+    "publisher": { "@type": "Organization", "name": "MoneyTab.in", "url": "https://moneytab.in/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is LTV ratio in a gold loan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "LTV stands for Loan-to-Value ratio. For gold loans, the RBI mandates a maximum LTV of 75% — meaning banks can lend you at most 75% of the assessed market value of your gold. So if your gold is worth ₹1 lakh, the maximum loan is ₹75,000. Some NBFCs offer higher LTV but at higher interest rates." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do banks accept gold coins for gold loans?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most banks accept gold coins for gold loans, provided the coin is issued by a bank or government mint and the purity is certified. Coins purchased from jewellers or private sources may not be accepted. Gold ETFs and digital gold cannot be used as collateral for gold loans." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <a href="https://moneytab.in" class="site-logo">Money<span>Tab</span>.in</a>
+    <div class="site-tagline">LOCAL FINANCE GUIDES FOR ODISHA</div>
+  </div>
+  <nav class="header-nav">
+    <div class="nav-links">
+      <a href="https://moneytab.in">Home</a>
+      <a href="../loans.html">Loans</a>
+      <a href="../investments.html">Investments</a>
+      <a href="../govt-schemes.html">Govt Schemes</a>
+      <a href="../calculators.html" class="active">Calculators</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <button class="hamburger-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://moneytab.in">Home</a><a href="../loans.html">Loans</a><a href="../investments.html">Investments</a>
+    <a href="../govt-schemes.html">Govt Schemes</a><a href="../calculators.html">Calculators</a>
+    <a href="../about.html">About</a><a href="../contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://moneytab.in">Home</a><span class="sep">&#8250;</span>
+  <a href="../calculators.html">Calculators</a><span class="sep">&#8250;</span>
+  <span>Gold Loan Calculator</span>
+</div>
+
+<div class="page-hero">
+  <div class="hero-tag">&#129351; Free Tool</div>
+  <h1>Gold Loan Calculator</h1>
+  <p>Find out exactly how much loan you can get against your gold jewellery &#8212; enter the weight, purity, and today&#8217;s gold rate for an instant estimate.</p>
+</div>
+
+<main>
+<div class="calc-page-wrap">
+
+  <p class="page-intro">Need cash urgently without selling your family jewellery? A gold loan is one of India's fastest and most affordable borrowing options — processed in under 2 hours at most banks. This calculator tells you exactly how much you can expect to get, based on the same formula banks use.</p>
+
+  <!-- ═══ CALCULATOR WIDGET ═══ -->
+  <div class="calc-widget">
+    <div class="calc-form">
+      <h3>Gold Loan Calculator</h3>
+      <div class="form-group">
+        <label>Gold Weight (grams)</label>
+        <div class="range-wrap">
+          <input type="range" id="gl-weight" min="1" max="500" step="1" value="20" oninput="calcGL()">
+          <span class="range-val" id="gl-weight-val">20g</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gold Purity</label>
+        <div class="range-wrap">
+          <input type="range" id="gl-purity" min="18" max="24" step="2" value="22" oninput="calcGL()">
+          <span class="range-val" id="gl-purity-val">22K</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gold Rate Today (&#8377;/gram, 24K)</label>
+        <div class="range-wrap">
+          <input type="range" id="gl-rate" min="5000" max="12000" step="100" value="9200" oninput="calcGL()">
+          <span class="range-val" id="gl-rate-val">&#8377;9,200</span>
+        </div>
+      </div>
+    </div>
+    <div class="calc-result">
+      <h3>Approx. Loan Amount</h3>
+      <div class="result-big" id="gl-result">&#8377;1.28L</div>
+      <div class="result-sub">at 75% LTV (bank standard)</div>
+      <div class="result-breakdown">
+        <div class="rb-item"><span class="rb-label">Market Value of Gold</span><span class="rb-val" id="gl-market">&#8377;1,70,320</span></div>
+        <div class="rb-item"><span class="rb-label">Loan at 75% LTV</span><span class="rb-val" id="gl-ltv">&#8377;1,27,740</span></div>
+        <div class="rb-item"><span class="rb-label">Note</span><span class="rb-val" style="font-size:.75rem;color:#5a5450">Banks use ~92% of market rate</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ARTICLE CONTENT ═══ -->
+  <div class="calc-content">
+    <h2>How Much Can You Borrow Against Your Gold?</h2>
+    <p>A gold loan lets you pledge your jewellery at a bank or NBFC and receive cash within hours &#8212; without selling the gold permanently. The bank stores your jewellery safely in their vault while you use the money, and returns it once you repay the full loan and interest.</p>
+    <p>The loan amount depends on two things: the <strong>current 24K gold market price</strong>, and the <strong>LTV ratio</strong> (Loan-to-Value). The RBI caps the maximum LTV for banks at <strong>75% of the gold's value</strong>. Banks also use about 90–95% of the MCX spot rate (not the full jeweller's retail price) when assessing value — this calculator uses 92%, which is a common benchmark.</p>
+
+    <div class="info-strip">
+      <div class="info-strip-card">
+        <div class="icon">&#129351;</div>
+        <h4>22K is Most Common</h4>
+        <p>Most household jewellery in Odisha is 22-karat. Banks accept 18K to 24K. Higher purity means higher loan amount per gram pledged.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#128683;</div>
+        <h4>Stones Don't Count</h4>
+        <p>Diamonds, rubies, emeralds, and all other stones are excluded from gold valuation entirely. Only the net weight of pure gold is counted.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#128197;</div>
+        <h4>Check Today's Rate</h4>
+        <p>Gold prices change daily. Search "MCX gold rate today" to get the current 24K rate before visiting a bank for your gold loan.</p>
+      </div>
+    </div>
+
+    <h2>Real Example: How Much for 20 Grams of 22K Gold?</h2>
+    <p>Let's say today's 24K MCX gold rate is &#8377;9,200 per gram. You have 20 grams of 22K gold jewellery. Here's how the bank calculates your loan:</p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Step</th>
+          <th>Calculation</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pure gold weight</td>
+          <td>20g × (22÷24)</td>
+          <td>18.33 grams pure gold</td>
+        </tr>
+        <tr>
+          <td>Market value (at 92% of MCX rate)</td>
+          <td>18.33g × &#8377;9,200 × 0.92</td>
+          <td><strong>&#8377;1,55,378</strong></td>
+        </tr>
+        <tr>
+          <td>Maximum loan (75% LTV)</td>
+          <td>&#8377;1,55,378 × 0.75</td>
+          <td><strong>&#8377;1,16,534</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>So for 20 grams of 22K gold jewellery, you can expect to get approximately <strong>&#8377;1.1–1.3 lakh</strong> from a bank (the exact amount varies slightly by lender and the day's MCX rate). NBFCs like Muthoot Finance or Manappuram may offer slightly different rates.</p>
+
+    <div class="tip-box">
+      <strong>&#128161; Gold loan tip for Odisha:</strong> Always approach 2–3 banks before choosing. <strong>SBI, Canara Bank, and UCO Bank</strong> are popular choices in Cuttack and Bhubaneswar and typically offer the lowest interest rates (8.75–11%). NBFCs like Muthoot Finance are faster but charge higher rates (12–24%). The difference in interest cost on a &#8377;1 lakh loan over 1 year can be &#8377;3,000–13,000 — so shopping around pays off.
+    </div>
+
+    <h2>Gold Loan vs Personal Loan — Which is Better?</h2>
+    <p>If you need money urgently and have gold at home, a gold loan almost always beats a personal loan. Here's a direct comparison:</p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Gold Loan</th>
+          <th>Personal Loan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Interest Rate</td>
+          <td><strong>8.75–12%</strong> (banks)</td>
+          <td>10–22%</td>
+        </tr>
+        <tr>
+          <td>Processing Time</td>
+          <td><strong>1–2 hours</strong></td>
+          <td>1–5 working days</td>
+        </tr>
+        <tr>
+          <td>Income Proof Required</td>
+          <td><strong>Not required</strong></td>
+          <td>Mandatory (salary slips, ITR)</td>
+        </tr>
+        <tr>
+          <td>CIBIL Score Check</td>
+          <td><strong>Not required</strong></td>
+          <td>Critical (700+ needed)</td>
+        </tr>
+        <tr>
+          <td>Foreclosure Charges</td>
+          <td>Nil at most banks</td>
+          <td>2–4% on outstanding amount</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The key advantage of a gold loan is that <strong>the gold acts as collateral</strong>, so the bank doesn't need to verify your creditworthiness through income or CIBIL. This makes it an excellent option for farmers, homemakers, self-employed individuals, or anyone who needs quick cash but doesn't have a formal income history.</p>
+
+    <h2>Types of Gold Loan Repayment Options</h2>
+    <p>Unlike personal loans where you must pay a fixed EMI every month, gold loans offer more flexible repayment structures:</p>
+    <ul>
+      <li><strong>EMI-Based Repayment:</strong> Pay a fixed EMI every month (like a personal loan). The gold is returned when the loan is fully repaid. Best if you have regular income and want to systematically close the loan.</li>
+      <li><strong>Bullet Repayment:</strong> Pay only interest each month, and repay the full principal at the end of the tenure. Useful for farmers and traders who get lump-sum income seasonally. Most common with 1-year gold loans.</li>
+      <li><strong>Overdraft (OD) Facility:</strong> Offered by some banks (SBI's Gold Loan OD, for example). You get a credit limit against your gold and pay interest only on the amount you actually use. Highly flexible for business owners and traders.</li>
+    </ul>
+
+    <div class="dark-tip">
+      <strong>&#128161; Read our verified guide:</strong> For branch addresses, phone numbers, and verified March 2026 gold loan rates at SBI, Canara Bank, and UCO Bank in Bhubaneswar, see our full guide on <a href="../articles/gold-loan-bapuji-nagar-bhubaneswar.html" style="color:#f0a060">gold loans in Bapuji Nagar, Bhubaneswar</a>.
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What is the LTV ratio and why does it matter?</div>
+        <div class="faq-a">LTV stands for Loan-to-Value ratio. For gold loans, the RBI mandates a maximum LTV of 75% — meaning banks can lend you at most 75% of the assessed market value of your gold. So if your gold is assessed at &#8377;1 lakh, the maximum loan is &#8377;75,000. This buffer protects the bank if gold prices fall. Some NBFCs offer higher LTV but charge significantly higher interest rates to compensate for the added risk.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my jewellery safe at the bank during the loan period?</div>
+        <div class="faq-a">Yes. Banks are legally required to store pledged gold in their designated secure vaults. The gold is insured during the loan period. You will receive a receipt with the exact weight and purity of the gold deposited. When you repay the loan, the exact same jewellery is returned to you. Banks have never lost pledged gold in any major incident in India — it is one of the safest forms of secured borrowing.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do banks accept gold coins for gold loans?</div>
+        <div class="faq-a">Most banks accept gold coins, provided the coin is issued by a bank (like SBI Gold Coins or India Post gold coins) or a government mint and has a certified purity. Coins purchased from jewellers or private sources may not be accepted by all banks. Gold ETFs, digital gold, and sovereign gold bonds cannot be pledged for gold loans — only physical gold is accepted.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I can't repay my gold loan?</div>
+        <div class="faq-a">If you default on a gold loan, the bank sends multiple reminders and notices. After a legally mandated notice period (typically 60–90 days), the bank has the right to auction the pledged gold to recover the outstanding amount. Any amount recovered above the loan + interest is returned to you. This is why it's important to borrow only what you can repay — and choose a tenure and EMI that fits your cash flow. Most banks allow one-time loan renewal or extension to avoid default.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-disclaimer">&#9432; This calculator uses 92% of the MCX spot rate and the RBI-mandated 75% LTV ceiling. Actual loan amounts depend on the bank's internal gold valuation method, the specific day's MCX rate, jewellery making charges (deducted), and the lender's individual policies. Always get a formal assessment at the bank counter before deciding. See our <a href="../disclaimer.html">Disclaimer</a>.</div>
+
+  <!-- Related Calculators -->
+  <div class="related-section">
+    <h3>Related Calculators &amp; Guides</h3>
+    <p class="rs-sub">Looking for more financial tools? Explore these free calculators on MoneyTab.in:</p>
+    <div class="related-links">
+      <div class="related-link-item">&#8226; <div><a href="emi-calculator.html">General EMI Calculator</a> <span>&#8212; for personal loans, car loans, and home loans</span></div></div>
+      <div class="related-link-item">&#8226; <div><a href="home-loan-eligibility-calculator.html">Home Loan Eligibility Calculator</a> <span>&#8212; find out how much loan your income qualifies for</span></div></div>
+      <div class="related-link-item">&#8226; <div><a href="sip-returns-calculator.html">SIP Returns Calculator</a> <span>&#8212; estimate how your monthly mutual fund investments will grow</span></div></div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="https://moneytab.in" class="footer-logo">Money<span>Tab</span>.in</a>
+      <p>Odisha&#39;s most trusted guide to local finance &#8212; loans, schemes, investments, and calculators. All rates verified at local branches in Cuttack &amp; Bhubaneswar.</p>
+      <div class="footer-social">
+        <a href="https://twitter.com/moneytabin" target="_blank" rel="noopener" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@moneytabin" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="../loans.html">Local Loans</a></li><li><a href="../investments.html">Investments</a></li>
+      <li><a href="../govt-schemes.html">Govt Schemes</a></li><li><a href="../calculators.html">Calculators</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li><li><a href="../advertise.html">Advertise</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="../privacy-policy.html">Privacy Policy</a></li><li><a href="../cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="../terms.html">Terms of Use</a></li><li><a href="../editorial-policy.html">Editorial Policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-row1">
+      <span class="footer-copy">&#169; 2026 MoneyTab.in &nbsp;&#183;&nbsp; Built with <span class="heart">&#9829;</span> from Cuttack, Odisha</span>
+      <div class="footer-legal-links">
+        <a href="../privacy-policy.html">Privacy</a><a href="../cookie-policy.html">Cookies</a>
+        <a href="../terms.html">Terms</a><a href="../disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer-line">All information on MoneyTab.in is for general informational purposes only. MoneyTab.in is not a financial advisor. See our <a href="../disclaimer.html">Disclaimer</a>.</p>
+  </div>
+</footer>
+
+<div class="cookie-consent" id="cookieBanner">
+  <div class="cookie-consent-inner">
+    <div class="cookie-left">
+      <span class="cookie-icon">&#127850;</span>
+      <div class="cookie-text-wrap">
+        <div class="cookie-title">We use cookies on MoneyTab.in</div>
+        <p class="cookie-text">We use cookies to improve your experience. Read our <a href="../privacy-policy.html">Privacy Policy</a> and <a href="../cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-settings" id="cookieSettings">Manage</button>
+      <button class="cookie-btn cookie-decline" id="cookieDecline">Reject All</button>
+      <button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click',function(){ document.getElementById('mobileMenu').classList.toggle('open'); });
+  (function(){
+    if(!localStorage.getItem('mtCookieConsent')){ setTimeout(function(){ document.getElementById('cookieBanner').classList.add('show'); }, 600); }
+    document.getElementById('cookieAccept').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','accepted'); document.getElementById('cookieBanner').classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','declined'); document.getElementById('cookieBanner').classList.remove('show'); });
+    if(document.getElementById('cookieSettings')){ document.getElementById('cookieSettings').addEventListener('click',function(){ window.location.href='../cookie-policy.html'; }); }
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.faq-item'); var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+  function fmt(n){ return '₹'+Math.round(n).toLocaleString('en-IN'); }
+  function fmtL(n){ if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr'; if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L'; return fmt(n); }
+  function calcGL(){
+    var wt=+document.getElementById('gl-weight').value;
+    var pur=+document.getElementById('gl-purity').value;
+    var rate=+document.getElementById('gl-rate').value;
+    document.getElementById('gl-weight-val').textContent=wt+'g';
+    document.getElementById('gl-purity-val').textContent=pur+'K';
+    document.getElementById('gl-rate-val').textContent='₹'+rate.toLocaleString('en-IN');
+    var pureGold=wt*(pur/24);
+    var marketVal=pureGold*rate*0.92;
+    var loanVal=marketVal*0.75;
+    document.getElementById('gl-result').textContent=fmtL(loanVal);
+    document.getElementById('gl-market').textContent=fmt(marketVal);
+    document.getElementById('gl-ltv').textContent=fmt(loanVal);
+  }
+  calcGL();
+</script>
+</body>
+</html>

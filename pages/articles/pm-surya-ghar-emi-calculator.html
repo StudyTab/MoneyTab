@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculate your exact solar loan EMI after PM Surya Ghar Yojana subsidy. Enter system size, cost, rate & tenure — the tool auto-deducts ₹30,000–₹78,000 central subsidy and shows your real monthly payment." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Rakesh Rout, MoneyTab.in" />
+  <link rel="canonical" href="https://moneytab.in/pages/articles/pm-surya-ghar-emi-calculator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://moneytab.in/pages/articles/pm-surya-ghar-emi-calculator.html" />
+  <meta property="og:title" content="PM Surya Ghar Yojana EMI Calculator: Monthly Loan After Subsidy | MoneyTab.in" />
+  <meta property="og:description" content="Calculate your exact solar loan EMI after PM Surya Ghar central subsidy. Auto-applies ₹30,000–₹78,000 subsidy tiers. Instant result — no sign-up needed." />
+  <meta property="og:image" content="https://moneytab.in/images/shared/pm-surya-ghar-emi-calculator-featured.png" />
+  <meta property="og:site_name" content="MoneyTab.in" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00+05:30" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00+05:30" />
+  <meta property="article:author" content="Rakesh Rout" />
+  <meta property="article:section" content="Calculators" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@moneytabin" />
+  <meta name="twitter:title" content="PM Surya Ghar Yojana EMI Calculator: Monthly Loan After Subsidy | MoneyTab.in" />
+  <meta name="twitter:description" content="Calculate your solar loan EMI after the central subsidy is deducted. Tiered subsidy auto-applied — 3kW gets ₹78,000 off." />
+  <meta name="twitter:image" content="https://moneytab.in/images/shared/pm-surya-ghar-emi-calculator-featured.png" />
+
+  <title>PM Surya Ghar Yojana EMI Calculator: Calculate Monthly Loan After Subsidy | MoneyTab.in</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "PM Surya Ghar Yojana EMI Calculator: Calculate Your Monthly Loan After Subsidy",
+    "description": "Calculate your exact solar loan EMI after PM Surya Ghar central subsidy is deducted. Tiered subsidy auto-applied.",
+    "image": "https://moneytab.in/images/shared/pm-surya-ghar-emi-calculator-featured.png",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Person",
+      "name": "Rakesh Rout",
+      "url": "https://moneytab.in/pages/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MoneyTab.in",
+      "url": "https://moneytab.in/",
+      "logo": { "@type": "ImageObject", "url": "https://moneytab.in/favicon.svg" }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://moneytab.in/pages/articles/pm-surya-ghar-emi-calculator.html"
+    }
+  }
+  </script>
+
+  <style>
+    /* ── Article layout ── */
+    .article-wrap{max-width:860px;margin:0 auto;padding:52px 24px 80px}
+    .article-body h2{font-family:'Lora',serif;font-size:1.45rem;font-weight:600;color:var(--ink);margin:48px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--rule)}
+    .article-body h3{font-family:'Lora',serif;font-size:1.08rem;font-weight:600;color:var(--ink);margin:28px 0 10px}
+    .article-body p{font-size:.975rem;color:var(--ink-soft);line-height:1.88;margin-bottom:14px}
+    .article-body ul{padding-left:22px;margin-bottom:18px}
+    .article-body li{font-size:.975rem;color:var(--ink-soft);line-height:1.8;margin-bottom:7px}
+    .article-body a{color:var(--accent);border-bottom:1px solid transparent;transition:border-color .2s}
+    .article-body a:hover{border-color:var(--accent)}
+    .article-body strong{color:var(--ink);font-weight:600}
+    .article-body hr{border:none;border-top:1px solid var(--rule);margin:44px 0}
+
+    /* ── Featured image ── */
+    .article-hero-img{width:100%;max-width:860px;margin:0 auto 0;display:block}
+    .article-hero-img img{width:100%;display:block;border-radius:0 0 8px 8px;max-height:420px;object-fit:cover}
+
+    /* ── Lede block ── */
+    .article-lede{border-left:3px solid var(--accent);background:var(--accent-lt);padding:18px 22px;border-radius:0 6px 6px 0;font-size:.975rem;color:var(--ink-soft);font-weight:300;line-height:1.85;margin:32px 0 28px}
+
+    /* ── Calculator widget ── */
+    .solar-calc-wrap{background:var(--card);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:8px 0 36px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+    .solar-calc-head{background:var(--ink);padding:18px 26px;display:flex;align-items:center;gap:12px}
+    .solar-calc-head .icon{font-size:1.5rem}
+    .solar-calc-head h3{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:#f0a060;margin:0}
+    .solar-calc-head p{font-size:.72rem;color:#7a7068;margin:0}
+    .solar-calc-body{padding:28px 26px}
+    .sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+    @media(max-width:560px){.sc-grid{grid-template-columns:1fr}}
+    .sc-field label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .sc-input-wrap{position:relative;display:flex;align-items:center}
+    .sc-prefix{position:absolute;left:12px;font-weight:600;color:var(--accent);font-size:.9rem;pointer-events:none}
+    .sc-suffix{position:absolute;right:12px;font-size:.7rem;font-weight:500;color:var(--muted);pointer-events:none}
+    .sc-field input{width:100%;padding:11px 44px 11px 30px;border:1.5px solid var(--rule);border-radius:6px;font-size:.9rem;font-family:'Poppins',sans-serif;font-weight:500;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s;-moz-appearance:textfield}
+    .sc-field input::-webkit-inner-spin-button,.sc-field input::-webkit-outer-spin-button{-webkit-appearance:none}
+    .sc-field input.no-pfx{padding-left:12px}
+    .sc-field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,86,26,.1)}
+    .sc-subsidy-row{background:var(--accent-lt);border:1px solid rgba(200,86,26,.25);border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+    .sc-subsidy-row .sub-label{font-size:.72rem;font-weight:600;color:var(--accent-dk);display:flex;align-items:center;gap:6px}
+    .sc-subsidy-row .sub-amt{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;color:var(--accent)}
+    .sc-subsidy-row .sub-tier{width:100%;font-size:.72rem;color:var(--accent);opacity:.8;margin-top:2px}
+    .sc-btn{width:100%;padding:13px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:background .2s,transform .15s}
+    .sc-btn:hover{background:var(--accent-dk);transform:translateY(-1px)}
+    .sc-btn:active{transform:translateY(0)}
+    .sc-results{display:none;margin-top:22px;border-top:1px solid var(--rule);padding-top:22px;animation:fadeUp .35s ease both}
+    .sc-results.show{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .sc-res-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
+    .sc-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+    @media(max-width:500px){.sc-res-grid{grid-template-columns:1fr 1fr}}
+    .sc-res-card{background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:14px 12px;text-align:center}
+    .sc-res-card.big{border-color:var(--accent);background:var(--accent-lt);grid-column:span 3}
+    @media(max-width:500px){.sc-res-card.big{grid-column:span 2}}
+    .sc-res-card .rl{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+    .sc-res-card .rv{font-family:'Lora',serif;font-size:1.3rem;font-weight:600;color:var(--ink)}
+    .sc-res-card.big .rv{font-size:2.2rem;color:var(--accent)}
+    .sc-res-card .rsub{font-size:.7rem;color:var(--muted);margin-top:3px}
+    .sc-amort{background:#f4f4f0;border-radius:6px;padding:12px 16px;font-size:.8rem;color:var(--muted);text-align:center;line-height:1.65}
+    .sc-amort strong{color:var(--ink-soft)}
+    .calc-disclaimer{background:#f8f8f5;border:1px solid var(--rule);border-radius:6px;padding:12px 16px;font-size:.75rem;color:var(--muted);line-height:1.65;margin-top:14px;text-align:center}
+
+    /* ── Info strip ── */
+    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 28px}
+    @media(max-width:580px){.info-strip{grid-template-columns:1fr}}
+    .info-strip-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px 16px;text-align:center}
+    .info-strip-card .icon{font-size:1.5rem;margin-bottom:8px}
+    .info-strip-card h4{font-family:'Lora',serif;font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+    .info-strip-card p{font-size:.78rem;color:var(--muted);line-height:1.55;font-weight:300;margin:0}
+
+    /* ── Subsidy tier table ── */
+    .table-wrap{overflow-x:auto;margin:20px 0 30px;border-radius:8px;border:1px solid var(--rule)}
+    .comp-table{width:100%;border-collapse:collapse;font-size:.84rem}
+    .comp-table thead tr{background:var(--ink)}
+    .comp-table th{color:#fff;padding:12px 16px;text-align:left;font-weight:500;font-size:.77rem}
+    .comp-table td{padding:12px 16px;border-bottom:1px solid var(--rule);color:var(--ink-soft);vertical-align:top;line-height:1.5}
+    .comp-table tr:last-child td{border-bottom:none}
+    .comp-table tr:nth-child(even) td{background:#f7f7f4}
+    .comp-table td:first-child{font-weight:600;color:var(--ink)}
+    .comp-table .hl{color:var(--accent);font-weight:700}
+    .comp-table .hl-row td{background:var(--accent-lt)!important}
+    .comp-table .hl-row td:last-child{color:var(--accent);font-weight:700}
+
+    /* ── Tip & dark boxes ── */
+    .tip-box{background:var(--accent-lt);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:15px 20px;margin:18px 0;font-size:.9rem;color:var(--ink-soft);line-height:1.78}
+    .tip-box strong{color:var(--ink)}
+    .dark-tip{background:var(--ink);border-radius:6px;padding:15px 20px;margin:18px 0;font-size:.875rem;color:#c8c2ba;line-height:1.78;font-weight:300}
+    .dark-tip strong{color:#f0a060;font-weight:600}
+
+    /* ── Scenario card ── */
+    .scenario-card{background:var(--ink);border-radius:8px;padding:28px;margin:22px 0}
+    .scenario-card h3{font-family:'Lora',serif;font-size:1rem;color:#f0a060;margin-bottom:18px}
+    .step-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+    .step-num{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+    .step-body{font-size:.88rem;color:#c8c2ba;line-height:1.72}
+    .step-body strong{color:#fff}
+    .step-body code{display:inline-block;background:rgba(200,86,26,.22);border:1px solid rgba(200,86,26,.4);padding:1px 8px;border-radius:4px;font-family:monospace;font-size:.82rem;color:#f0a060;margin-top:3px}
+    .emi-result-row{background:var(--accent);border-radius:6px;padding:18px 22px;margin-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .emi-result-row .erl{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+    .emi-result-row .ern{font-family:'Lora',serif;font-size:2.2rem;font-weight:600;color:#fff;line-height:1}
+    .emi-result-row .ers{font-size:.75rem;color:rgba(255,255,255,.75)}
+
+    /* ── Video ── */
+    .video-wrap{margin:32px 0 36px;border-radius:8px;overflow:hidden;border:1px solid var(--rule)}
+    .video-label{background:var(--ink);padding:12px 20px;font-size:.77rem;font-weight:600;color:#f0a060;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+    .video-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;background:#000}
+    .video-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+    .video-caption{background:#f4f4f0;padding:10px 16px;font-size:.74rem;color:var(--muted);font-style:italic;border-top:1px solid var(--rule)}
+
+    /* ── FAQ ── */
+    .faq-list{margin:16px 0 32px;display:grid;gap:10px}
+    .faq-item{background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+    .faq-q{padding:15px 20px;font-weight:600;font-size:.88rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+    .faq-q::after{content:"+";font-size:1.2rem;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform .2s}
+    .faq-item.open .faq-q::after{transform:rotate(45deg)}
+    .faq-a{display:none;padding:14px 20px 16px;font-size:.88rem;color:var(--ink-soft);line-height:1.82;border-top:1px solid var(--rule)}
+    .faq-item.open .faq-a{display:block}
+
+    /* ── Author meta ── */
+    .article-meta{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:0}
+    .meta-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0}
+    .meta-author{font-size:.82rem;font-weight:600;color:var(--ink)}
+    .meta-date{font-size:.76rem;color:var(--muted)}
+    .article-category-tag{display:inline-block;background:var(--accent-lt);color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 11px;border-radius:4px;margin-bottom:14px;border:1px solid rgba(200,86,26,.2)}
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <div class="header-top">
+    <a href="https://moneytab.in" class="site-logo">Money<span>Tab</span>.in</a>
+    <div class="site-tagline">LOCAL FINANCE GUIDES FOR ODISHA</div>
+  </div>
+  <nav class="header-nav">
+    <div class="nav-links">
+      <a href="https://moneytab.in">Home</a>
+      <a href="../loans.html">Loans</a>
+      <a href="../investments.html">Investments</a>
+      <a href="../govt-schemes.html">Govt Schemes</a>
+      <a href="../calculators.html" class="active">Calculators</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <button class="hamburger-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://moneytab.in">Home</a>
+    <a href="../loans.html">Loans</a>
+    <a href="../investments.html">Investments</a>
+    <a href="../govt-schemes.html">Govt Schemes</a>
+    <a href="../calculators.html">Calculators</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://moneytab.in">Home</a>
+  <span class="sep">&#8250;</span>
+  <a href="../calculators.html">Calculators</a>
+  <span class="sep">&#8250;</span>
+  <span>PM Surya Ghar EMI Calculator</span>
+</div>
+
+<!-- ══ FEATURED IMAGE ══ -->
+<div class="article-hero-img">
+  <img src="../../images/shared/pm-surya-ghar-emi-calculator-featured.png"
+       alt="PM Surya Ghar Yojana EMI Calculator — Calculate Monthly Solar Loan After Subsidy"
+       width="860" height="420" loading="eager" />
+</div>
+
+<main>
+<div class="article-wrap">
+
+  <!-- Article header -->
+  <div style="margin-bottom:20px">
+    <span class="article-category-tag">&#9889; Calculator · Govt Scheme</span>
+    <h1 style="font-family:'Lora',serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:600;color:var(--ink);line-height:1.28;margin-bottom:14px">
+      PM Surya Ghar Yojana EMI Calculator: Calculate Your Monthly Loan After Subsidy
+    </h1>
+    <div class="article-meta">
+      <img src="../../images/shared/author-rakesh-rout.jpg" alt="Rakesh Rout" class="meta-avatar" />
+      <div>
+        <div class="meta-author">Rakesh Rout</div>
+        <div class="meta-date">Published: 23 March 2026 &nbsp;·&nbsp; 7 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <!-- ── Intro ── -->
+    <div class="article-lede">
+      Here is the problem most people run into: your solar installer gives you a quote — say ₹1,60,000 for a 3kW system — and you want to finance it with a bank loan. But the <strong>PM Surya Ghar Muft Bijli Yojana</strong> changes your actual loan amount by deducting a government subsidy. The tricky part? That subsidy is not a flat number. It depends on your system size and follows a tiered structure. So your real loan principal — and therefore your exact EMI — keeps shifting as you resize. This calculator solves exactly that. Enter your system size, total cost, bank interest rate, and tenure. It auto-applies the correct subsidy tier and returns your actual monthly payment in seconds.
+    </div>
+
+    <!-- ══════════════════════════════════
+         CALCULATOR WIDGET
+    ══════════════════════════════════ -->
+    <div class="solar-calc-wrap">
+      <div class="solar-calc-head">
+        <div class="icon">&#9889;</div>
+        <div>
+          <h3>PM Surya Ghar EMI Calculator</h3>
+          <p>Central subsidy auto-applied per official tier structure</p>
+        </div>
+      </div>
+      <div class="solar-calc-body">
+
+        <div class="sc-grid">
+          <div class="sc-field">
+            <label>System Capacity (kW)</label>
+            <div class="sc-input-wrap">
+              <span class="sc-suffix">kW</span>
+              <input class="no-pfx" type="number" id="sc-kw" value="3" min="0.5" max="10" step="0.5" oninput="scLiveSubsidy()">
+            </div>
+          </div>
+          <div class="sc-field">
+            <label>Total System Cost (₹)</label>
+            <div class="sc-input-wrap">
+              <span class="sc-prefix">₹</span>
+              <input type="number" id="sc-cost" value="160000" min="10000" step="1000">
+            </div>
+          </div>
+          <div class="sc-field">
+            <label>Annual Interest Rate</label>
+            <div class="sc-input-wrap">
+              <span class="sc-suffix">% p.a.</span>
+              <input class="no-pfx" type="number" id="sc-rate" value="9" min="1" max="20" step="0.1">
+            </div>
+          </div>
+          <div class="sc-field">
+            <label>Loan Tenure</label>
+            <div class="sc-input-wrap">
+              <span class="sc-suffix">yrs</span>
+              <input class="no-pfx" type="number" id="sc-tenure" value="5" min="1" max="20" step="1">
+            </div>
+          </div>
+        </div>
+
+        <div class="sc-subsidy-row">
+          <div>
+            <div class="sub-label">&#127968; Central Subsidy Applied</div>
+            <div class="sub-tier" id="sc-tier-note">2kW × ₹30,000 + 1kW × ₹18,000</div>
+          </div>
+          <div class="sub-amt" id="sc-sub-display">₹78,000</div>
+        </div>
+
+        <button class="sc-btn" onclick="scCalculate()">Calculate My Solar EMI &#8594;</button>
+
+        <div class="sc-results" id="scResults">
+          <div class="sc-res-label">Your Loan Breakdown</div>
+          <div class="sc-res-grid">
+            <div class="sc-res-card">
+              <div class="rl">Subsidy</div>
+              <div class="rv" id="sc-r-sub">—</div>
+              <div class="rsub">Govt. deduction</div>
+            </div>
+            <div class="sc-res-card">
+              <div class="rl">Loan Principal</div>
+              <div class="rv" id="sc-r-prin">—</div>
+              <div class="rsub">After subsidy</div>
+            </div>
+            <div class="sc-res-card">
+              <div class="rl">Total Interest</div>
+              <div class="rv" id="sc-r-int">—</div>
+              <div class="rsub">Over full tenure</div>
+            </div>
+            <div class="sc-res-card big">
+              <div class="rl">&#128197; Your Monthly EMI</div>
+              <div class="rv" id="sc-r-emi">—</div>
+              <div class="rsub" id="sc-r-sub2">—</div>
+            </div>
+          </div>
+          <div class="sc-amort" id="scAmortNote"></div>
+          <div class="calc-disclaimer">&#9432; Results are estimates. Actual EMI may vary slightly due to processing fees, exact disbursal date, and bank rounding. Verify with your lender before signing.</div>
+        </div>
+
+      </div>
+    </div>
+    <!-- END CALCULATOR -->
+
+    <!-- ── How the Subsidy Works ── -->
+    <h2>How the PM Surya Ghar Subsidy Actually Works</h2>
+
+    <p>The central subsidy under <strong>PM Surya Ghar Muft Bijli Yojana</strong> is not a flat amount. It follows a tiered structure based on the size of your rooftop solar system. A 1kW installation and a 5kW installation do not receive the same benefit.</p>
+
+    <p>Here is the official central government subsidy structure, simplified into a clear table:</p>
+
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>System Size</th>
+            <th>Subsidy Rate</th>
+            <th>Maximum Central Subsidy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Up to 1 kW</td>
+            <td>₹30,000 per kW</td>
+            <td>₹30,000</td>
+          </tr>
+          <tr>
+            <td>Up to 2 kW</td>
+            <td>₹30,000 per kW</td>
+            <td>₹60,000</td>
+          </tr>
+          <tr class="hl-row">
+            <td>3 kW system</td>
+            <td>₹30,000 × 2kW + ₹18,000 for 3rd kW</td>
+            <td class="hl">₹78,000 (most popular)</td>
+          </tr>
+          <tr>
+            <td>Above 3 kW</td>
+            <td>Capped — no extra benefit beyond 3kW</td>
+            <td>₹78,000 (flat cap)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>&#128161; Key insight:</strong> Installing more than 3kW does not give you any additional central subsidy. A 5kW system and a 3kW system both receive the same ₹78,000. So choose your system size based on your actual electricity consumption, not to maximise the subsidy amount.
+    </div>
+
+    <p>Some states — including Goa, Kerala, and Rajasthan — offer an additional <strong>state-level top-up subsidy</strong> on top of the central benefit. Always check with your State Nodal Agency (SNA) before finalising your order.</p>
+
+    <div class="info-strip">
+      <div class="info-strip-card">
+        <div class="icon">&#127968;</div>
+        <h4>For 1–2 kW Homes</h4>
+        <p>A 1–2kW system suits smaller households with bills under ₹800/month. Subsidy is ₹30,000–₹60,000.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#9989;</div>
+        <h4>3 kW is the Sweetspot</h4>
+        <p>Most Indian families choose 3kW. It hits the subsidy cap of ₹78,000 and covers average monthly usage well.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#128683;</div>
+        <h4>Above 3 kW</h4>
+        <p>No extra central subsidy. Install bigger only if your electricity bills genuinely justify the higher system cost.</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ── How to Use ── -->
+    <h2>How to Use This Solar EMI Calculator</h2>
+
+    <p>The tool above is built to be self-explanatory. Here is a quick guide to each input field:</p>
+
+    <ul>
+      <li><strong>System Capacity (kW):</strong> Enter the rooftop solar system size your installer quoted — typically 1kW to 5kW for a household. The subsidy badge updates live as you type.</li>
+      <li><strong>Total System Cost (₹):</strong> Enter the full quoted price from your installer <em>before</em> any deductions. This is the number on your quotation letter or estimate sheet.</li>
+      <li><strong>Annual Interest Rate (%):</strong> The rate offered by your bank. Nationalised banks empanelled under PM Surya Ghar typically offer solar loans between 7%–10.5% per annum. Try 9% as a middle estimate if unsure.</li>
+      <li><strong>Loan Tenure (Years):</strong> How many years you want to repay. Shorter tenure means higher EMI but less total interest paid. Longer tenure lowers your monthly outgo but increases the overall cost of the loan.</li>
+    </ul>
+
+    <p>Click <strong>"Calculate My Solar EMI"</strong> — the tool deducts the correct subsidy tier, computes your actual loan principal, and instantly returns your monthly payment along with total interest and total repayment.</p>
+
+    <!-- ── YouTube Video ── -->
+    <div class="video-wrap">
+      <div class="video-label">
+        <svg width="15" height="15" viewBox="0 0 24 24"><path fill="#ff0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Video: PM Surya Ghar Yojana — How to Apply &amp; Get the Subsidy (Official Guide)
+      </div>
+      <div class="video-iframe-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/H0BTZW5G0vw?rel=0&modestbranding=1"
+          title="PM Surya Ghar Muft Bijli Yojana — How to Apply, Subsidy Process and Solar Loan Guide"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-caption">&#9432; A step-by-step walkthrough of the PM Surya Ghar application process, subsidy tiers, and how to register on the National Portal for Rooftop Solar at pmsuryaghar.gov.in.</div>
+    </div>
+
+    <hr />
+
+    <!-- ── Real World Example ── -->
+    <h2>Real-World Example: Financing a 3kW Solar Plant</h2>
+
+    <p>Let's walk through the most common scenario — a mid-sized household in Odisha going solar for the first time.</p>
+
+    <div class="scenario-card">
+      <h3>&#127968; Scenario: 3kW Rooftop System, Odisha</h3>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">You receive a quote from an empanelled installer: <strong>₹1,60,000</strong> for a 3kW rooftop solar system including panels, inverter, and installation charges.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          Central subsidy for 3kW: ₹30,000 × 2 + ₹18,000 = <strong>₹78,000</strong><br>
+          <code>₹1,60,000 − ₹78,000 = ₹82,000 loan principal</code>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">You approach an empanelled bank (e.g. Bank of Baroda or SBI). They offer <strong>9% per annum</strong> over <strong>5 years (60 months)</strong>.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          EMI formula: <code>EMI = P × r(1+r)ⁿ / [(1+r)ⁿ−1]</code><br>
+          P = ₹82,000 &nbsp;|&nbsp; r = 0.75% monthly &nbsp;|&nbsp; n = 60 months
+        </div>
+      </div>
+      <div class="emi-result-row">
+        <div>
+          <div class="erl">Your actual monthly EMI</div>
+          <div class="ern">₹1,702</div>
+        </div>
+        <div class="ers">Total interest: ₹20,110 &nbsp;·&nbsp; Total repayment: ₹1,02,110</div>
+      </div>
+    </div>
+
+    <p>At just ₹1,702 per month, and with average electricity bill savings of ₹1,500–₹2,500 per month for a 3kW system in Odisha, this setup can be <strong>cash-flow neutral or even cash-flow positive from month one</strong>. The system typically pays for itself within 4–6 years and continues generating free power for 20+ years after that.</p>
+
+    <div class="dark-tip">
+      <strong>&#128161; Odisha tip:</strong> CESU and SOUTHCO consumers in Bhubaneswar and Cuttack can now register for net metering directly through the DISCOM portal. Excess power exported to the grid gets credited against your bill, reducing your effective electricity cost further. Ask your DISCOM office for the net metering form when you apply for PM Surya Ghar.
+    </div>
+
+    <hr />
+
+    <!-- ── FAQ ── -->
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">Is the subsidy amount credited to my bank account or the loan account?</div>
+        <div class="faq-a">The PM Surya Ghar central subsidy is credited <strong>directly to your bank account</strong> — not to the installer and not automatically to the loan. The subsidy is disbursed after successful commissioning of the solar system and inspection by your DISCOM. This process typically takes 30–60 days after installation. You are expected to pay the installer's full bill (via your own funds or your bank loan), and the government subsidy is then reimbursed into your linked bank account. Once received, you can use it to <strong>prepay a portion of your loan principal</strong> — most PM Surya Ghar empanelled banks allow this without any prepayment penalty.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What are the standard interest rates for solar loans in India?</div>
+        <div class="faq-a">
+          Several nationalised and private banks have been empanelled under PM Surya Ghar to offer dedicated rooftop solar loans. Indicative rates as of early 2026:<br><br>
+          • <strong>State Bank of India (SBI):</strong> ~7.25%–9.75% p.a.<br>
+          • <strong>Bank of Baroda:</strong> ~9.00%–10.50% p.a.<br>
+          • <strong>Canara Bank:</strong> ~8.50%–10.00% p.a.<br>
+          • <strong>Indian Bank:</strong> ~8.50%–9.50% p.a.<br><br>
+          Rates vary based on your credit score, loan amount, income, and tenure. Always compare at least 2–3 empanelled banks on the official PM Surya Ghar portal before finalising. Visit <a href="https://pmsuryaghar.gov.in" target="_blank" rel="noopener">pmsuryaghar.gov.in</a> for the updated lender list.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I claim the subsidy if I install more than 3kW?</div>
+        <div class="faq-a">Yes, you can install a system larger than 3kW — say 5kW or 10kW — but the <strong>maximum central subsidy remains capped at ₹78,000 regardless of size</strong>. There is no additional central benefit for capacity beyond 3kW. However, a larger system generates more electricity, which means bigger monthly bill savings and potentially higher net metering credits. Some states also offer a separate state-level subsidy for higher capacity — consult your State Nodal Agency (SNA) for current guidelines in your state.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Does the EMI start before or after the subsidy is credited?</div>
+        <div class="faq-a">Your EMI schedule will be based on the <strong>full loan amount disbursed by the bank</strong>, which typically covers the total system cost before subsidy. Once the government subsidy (usually ₹30,000–₹78,000) is credited to your account after 30–60 days post-commissioning, you can use that money to make a <strong>partial prepayment</strong> of the loan principal. Most empanelled banks allow prepayment without penalty. After you prepay, your remaining EMIs or tenure will reduce accordingly. The calculator above models the post-subsidy principal for planning — it assumes you immediately apply the subsidy toward the loan.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Who can apply for PM Surya Ghar Yojana?</div>
+        <div class="faq-a">Any Indian household that owns a home with a valid electricity consumer number can apply. The rooftop must be structurally suitable for solar panel installation. Applicants must register on the <strong>National Portal for Rooftop Solar</strong> at pmsuryaghar.gov.in, select an empanelled vendor in their area, and apply through their local DISCOM. The scheme is available across all states and union territories. There is no income ceiling for the central subsidy.</div>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <!-- ── Related ── -->
+    <h2>Related Calculators &amp; Guides</h2>
+    <p>Looking for more financial tools? Explore these free calculators on MoneyTab.in:</p>
+    <ul>
+      <li><a href="../calculators.html">General EMI Calculator</a> — for personal loans, car loans, and home loans</li>
+      <li><a href="../calculators.html">Home Loan Eligibility Calculator</a> — find out how much loan your income qualifies for</li>
+      <li><a href="../calculators.html">SIP Returns Calculator</a> — estimate how your monthly mutual fund investments will grow</li>
+      <li><a href="../calculators.html">Gold Loan Calculator</a> — check how much you can borrow against your jewellery</li>
+    </ul>
+
+  </div><!-- /article-body -->
+</div><!-- /article-wrap -->
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="https://moneytab.in" class="footer-logo">Money<span>Tab</span>.in</a>
+      <p>Odisha&#39;s most trusted guide to local finance &#8212; loans, schemes, investments, and calculators. All rates verified at local branches in Cuttack &amp; Bhubaneswar.</p>
+      <div class="footer-social">
+        <a href="https://twitter.com/moneytabin" target="_blank" rel="noopener" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@moneytabin" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="../loans.html">Local Loans</a></li>
+      <li><a href="../investments.html">Investments</a></li>
+      <li><a href="../govt-schemes.html">Govt Schemes</a></li>
+      <li><a href="../calculators.html">Calculators</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="../about.html">About Us</a></li>
+      <li><a href="../contact.html">Contact Us</a></li>
+      <li><a href="../advertise.html">Advertise</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="../cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="../terms.html">Terms of Use</a></li>
+      <li><a href="../editorial-policy.html">Editorial Policy</a></li>
+      <li><a href="../disclaimer.html">Disclaimer</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-row1">
+      <span class="footer-copy">&#169; 2026 MoneyTab.in &nbsp;&#183;&nbsp; Built with <span class="heart">&#9829;</span> from Cuttack, Odisha</span>
+      <div class="footer-legal-links">
+        <a href="../privacy-policy.html">Privacy</a>
+        <a href="../cookie-policy.html">Cookies</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer-line">All information on MoneyTab.in is for general informational purposes only. MoneyTab.in is not a financial advisor. See our <a href="../disclaimer.html">Disclaimer</a>.</p>
+  </div>
+</footer>
+
+<div class="cookie-consent" id="cookieBanner">
+  <div class="cookie-consent-inner">
+    <div class="cookie-left">
+      <span class="cookie-icon">&#127850;</span>
+      <div class="cookie-text-wrap">
+        <div class="cookie-title">We use cookies on MoneyTab.in</div>
+        <p class="cookie-text">We use cookies to improve your experience. Read our <a href="../privacy-policy.html">Privacy Policy</a> and <a href="../cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-settings" id="cookieSettings">Manage</button>
+      <button class="cookie-btn cookie-decline" id="cookieDecline">Reject All</button>
+      <button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Nav ──
+  document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  // ── Cookie ──
+  (function(){
+    if(!localStorage.getItem('mtCookieConsent')){
+      setTimeout(function(){ document.getElementById('cookieBanner').classList.add('show'); }, 600);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      localStorage.setItem('mtCookieConsent','accepted');
+      document.getElementById('cookieBanner').classList.remove('show');
+    });
+    document.getElementById('cookieDecline').addEventListener('click', function(){
+      localStorage.setItem('mtCookieConsent','declined');
+      document.getElementById('cookieBanner').classList.remove('show');
+    });
+    document.getElementById('cookieSettings').addEventListener('click', function(){
+      window.location.href = '../cookie-policy.html';
+    });
+  })();
+
+  // ── FAQ ──
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── Calculator ──
+  function scGetSubsidy(kw) {
+    if(kw <= 0) return 0;
+    if(kw <= 2) return Math.round(kw * 30000);
+    if(kw <= 3) return 60000 + Math.round((kw - 2) * 18000);
+    return 78000;
+  }
+  function scGetTier(kw) {
+    if(kw <= 0) return '';
+    if(kw <= 2) return kw + 'kW × ₹30,000/kW';
+    if(kw <= 3) return '2kW × ₹30,000 + ' + (kw-2).toFixed(1) + 'kW × ₹18,000';
+    return 'Capped at 3kW — maximum central subsidy';
+  }
+  function scFmt(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
+
+  function scLiveSubsidy(){
+    var kw = parseFloat(document.getElementById('sc-kw').value) || 0;
+    document.getElementById('sc-sub-display').textContent = scFmt(scGetSubsidy(kw));
+    document.getElementById('sc-tier-note').textContent = scGetTier(kw);
+    document.getElementById('scResults').classList.remove('show');
+  }
+
+  function scCalculate(){
+    var kw      = parseFloat(document.getElementById('sc-kw').value)      || 0;
+    var cost    = parseFloat(document.getElementById('sc-cost').value)     || 0;
+    var annRate = parseFloat(document.getElementById('sc-rate').value)     || 0;
+    var years   = parseFloat(document.getElementById('sc-tenure').value)   || 1;
+    var subsidy = scGetSubsidy(kw);
+    var prin    = Math.max(cost - subsidy, 0);
+    var n       = years * 12;
+    var r       = annRate / 100 / 12;
+    var emi     = r === 0 ? prin/n : prin * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+    var total   = emi * n;
+    var interest = total - prin;
+
+    document.getElementById('sc-r-sub').textContent  = scFmt(subsidy);
+    document.getElementById('sc-r-prin').textContent = scFmt(prin);
+    document.getElementById('sc-r-int').textContent  = scFmt(interest);
+    document.getElementById('sc-r-emi').textContent  = scFmt(emi);
+    document.getElementById('sc-r-sub2').textContent = 'per month for ' + years + ' year' + (years>1?'s':'') + ' (' + n + ' EMIs)';
+    document.getElementById('scAmortNote').innerHTML =
+      '<strong>Total repayment:</strong> ' + scFmt(total) + ' &nbsp;|&nbsp; ' +
+      '<strong>Total interest paid:</strong> ' + scFmt(interest);
+
+    document.getElementById('scResults').classList.add('show');
+  }
+
+  scLiveSubsidy();
+</script>
+</body>
+</html>

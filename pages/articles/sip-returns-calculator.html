@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free SIP Returns Calculator — estimate how your monthly mutual fund SIP investments will grow over time with compounding. Start planning your wealth today. No sign-up needed." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="MoneyTab.in" />
+  <link rel="canonical" href="https://moneytab.in/pages/calculators/sip-returns-calculator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moneytab.in/pages/calculators/sip-returns-calculator.html" />
+  <meta property="og:title" content="SIP Returns Calculator — See Your Mutual Fund Growth | MoneyTab.in" />
+  <meta property="og:description" content="Calculate exactly how much your monthly SIP investment will grow. See the power of compounding over 10, 20, or 30 years — with instant results." />
+  <meta property="og:site_name" content="MoneyTab.in" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@moneytabin" />
+  <meta name="twitter:title" content="SIP Returns Calculator — See Your Mutual Fund Growth | MoneyTab.in" />
+  <meta name="twitter:description" content="Calculate exactly how much your monthly SIP investment will grow over time. See the power of compounding with instant results." />
+
+  <title>SIP Returns Calculator — Estimate Your Mutual Fund Growth | MoneyTab.in</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  <style>
+    .calc-page-wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+    .calc-widget{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+    @media(max-width:768px){.calc-widget{grid-template-columns:1fr}}
+    .calc-form{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:30px}
+    .calc-form h3{font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:24px}
+    .calc-result{background:var(--ink);border-radius:8px;padding:30px;display:flex;flex-direction:column;justify-content:center}
+    .calc-result h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:#5a5450;margin-bottom:8px;font-weight:600}
+    .result-big{font-family:'Lora',serif;font-size:2.6rem;font-weight:600;color:#f0a060;line-height:1;margin-bottom:6px}
+    .result-sub{font-size:.82rem;color:#7a7068}
+    .result-breakdown{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-direction:column;gap:12px}
+    .rb-item{display:flex;justify-content:space-between;align-items:center}
+    .rb-label{font-size:.82rem;color:#6a6058}
+    .rb-val{font-size:.88rem;font-weight:600;color:#d4cdc5}
+    .form-group{margin-bottom:22px}
+    .form-group label{display:block;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .range-wrap{display:flex;align-items:center;gap:12px}
+    .range-wrap input[type=range]{flex:1;accent-color:var(--accent)}
+    .range-val{font-size:.88rem;font-weight:600;color:var(--accent);min-width:80px;text-align:right}
+    .calc-content{margin-bottom:40px}
+    .calc-content h2{font-family:'Lora',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--rule)}
+    .calc-content p{font-size:.975rem;color:var(--ink-soft);line-height:1.85;margin-bottom:14px}
+    .calc-content ul{padding-left:20px;margin-bottom:16px}
+    .calc-content ul li{font-size:.95rem;color:var(--ink-soft);line-height:1.8;margin-bottom:8px}
+    .calc-content strong{color:var(--ink)}
+    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 28px}
+    @media(max-width:600px){.info-strip{grid-template-columns:1fr}}
+    .info-strip-card{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px 16px;text-align:center}
+    .info-strip-card .icon{font-size:1.6rem;margin-bottom:8px}
+    .info-strip-card h4{font-family:'Lora',serif;font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+    .info-strip-card p{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300;margin:0}
+    .tip-box{background:var(--accent-lt);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:16px 20px;margin:20px 0;font-size:.9rem;color:var(--ink-soft);line-height:1.78}
+    .tip-box strong{color:var(--ink)}
+    .dark-tip{background:var(--ink);border-radius:6px;padding:16px 20px;margin:20px 0;font-size:.875rem;color:#c8c2ba;line-height:1.78;font-weight:300}
+    .dark-tip strong{color:#f0a060;font-weight:600}
+    .formula-box{background:#f4f4f0;border:1px solid var(--rule);border-radius:6px;padding:16px 20px;margin:16px 0 24px;font-size:.875rem;color:var(--ink-soft);line-height:1.7}
+    .formula-box code{font-family:monospace;background:#e8e8e4;padding:2px 6px;border-radius:3px;font-size:.85rem;color:var(--ink)}
+    .faq-list{margin:16px 0 32px;display:grid;gap:10px}
+    .faq-item{background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+    .faq-q{padding:15px 20px;font-weight:600;font-size:.9rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+    .faq-q::after{content:"+";font-size:1.2rem;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform .2s}
+    .faq-item.open .faq-q::after{transform:rotate(45deg)}
+    .faq-a{display:none;padding:14px 20px 16px;font-size:.875rem;color:var(--ink-soft);line-height:1.82;border-top:1px solid var(--rule)}
+    .faq-item.open .faq-a{display:block}
+    .example-table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:.875rem}
+    .example-table th{background:var(--ink);color:#d4cdc5;padding:10px 14px;text-align:left;font-weight:600;font-size:.8rem;letter-spacing:.04em}
+    .example-table td{padding:10px 14px;border-bottom:1px solid var(--rule);color:var(--ink-soft)}
+    .example-table tr:last-child td{border-bottom:none}
+    .example-table tr:nth-child(even) td{background:#f7f7f4}
+    .calc-disclaimer{background:#f8f8f5;border:1px solid var(--rule);border-radius:6px;padding:14px 18px;font-size:.78rem;color:var(--muted);line-height:1.7;margin-top:16px;text-align:center}
+    .related-section{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:28px 28px 20px;margin-top:48px}
+    .related-section h3{font-family:'Lora',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+    .related-section .rs-sub{font-size:.875rem;color:var(--muted);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+    .related-links{display:grid;gap:10px}
+    .related-link-item{display:flex;align-items:flex-start;gap:10px;font-size:.9rem}
+    .related-link-item a{color:var(--accent);font-weight:500}
+    .related-link-item a:hover{text-decoration:underline}
+    .related-link-item span{color:var(--ink-soft)}
+    .page-intro{font-size:.975rem;color:var(--ink-soft);line-height:1.85;margin-bottom:32px;max-width:680px}
+    .video-wrap{margin:32px 0 36px;border-radius:8px;overflow:hidden;border:1px solid var(--rule)}
+    .video-label{background:var(--ink);padding:12px 20px;font-size:.78rem;font-weight:600;color:#f0a060;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+    .video-iframe-wrap{position:relative;padding-bottom:56.25%;height:0;background:#000}
+    .video-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+    .video-caption{background:#f4f4f0;padding:10px 16px;font-size:.74rem;color:var(--muted);font-style:italic;border-top:1px solid var(--rule)}
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SIP Returns Calculator — Estimate Your Mutual Fund Growth | MoneyTab.in",
+    "url": "https://moneytab.in/pages/calculators/sip-returns-calculator.html",
+    "description": "Free SIP calculator to estimate how your monthly mutual fund investments will grow with compounding over 1–40 years.",
+    "publisher": { "@type": "Organization", "name": "MoneyTab.in", "url": "https://moneytab.in/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is rupee cost averaging in SIP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Rupee cost averaging means that when markets are low, your fixed monthly SIP amount buys more mutual fund units. When markets are high, it buys fewer. Over time, this automatically averages out your purchase cost — you never buy all your units at a market peak." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 12% return realistic for SIP in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For diversified equity mutual funds over 10+ year periods, 11–14% annual returns have been historically typical in India. 12% is a reasonable planning estimate. However, actual returns are market-linked and not guaranteed — they could be higher or lower. For conservative planning, use 10–11%." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <a href="https://moneytab.in" class="site-logo">Money<span>Tab</span>.in</a>
+    <div class="site-tagline">LOCAL FINANCE GUIDES FOR ODISHA</div>
+  </div>
+  <nav class="header-nav">
+    <div class="nav-links">
+      <a href="https://moneytab.in">Home</a>
+      <a href="../loans.html">Loans</a>
+      <a href="../investments.html">Investments</a>
+      <a href="../govt-schemes.html">Govt Schemes</a>
+      <a href="../calculators.html" class="active">Calculators</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <button class="hamburger-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://moneytab.in">Home</a><a href="../loans.html">Loans</a><a href="../investments.html">Investments</a>
+    <a href="../govt-schemes.html">Govt Schemes</a><a href="../calculators.html">Calculators</a>
+    <a href="../about.html">About</a><a href="../contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://moneytab.in">Home</a><span class="sep">&#8250;</span>
+  <a href="../calculators.html">Calculators</a><span class="sep">&#8250;</span>
+  <span>SIP Returns Calculator</span>
+</div>
+
+<div class="page-hero">
+  <div class="hero-tag">&#128200; Free Tool</div>
+  <h1>SIP Returns Calculator</h1>
+  <p>See exactly how much your monthly mutual fund SIP will grow over time &#8212; watch compounding turn small, regular investments into serious wealth.</p>
+</div>
+
+<main>
+<div class="calc-page-wrap">
+
+  <p class="page-intro">A Systematic Investment Plan (SIP) is the simplest way for a salaried person to build wealth in India. Instead of a large lump sum, you invest a fixed amount every month — as little as &#8377;500. This calculator shows you exactly what that small monthly habit can become over 5, 10, or 20 years.</p>
+
+  <!-- ═══ CALCULATOR WIDGET ═══ -->
+  <div class="calc-widget">
+    <div class="calc-form">
+      <h3>SIP Returns Calculator</h3>
+      <div class="form-group">
+        <label>Monthly SIP Amount (&#8377;)</label>
+        <div class="range-wrap">
+          <input type="range" id="sip-amount" min="500" max="100000" step="500" value="5000" oninput="calcSIP()">
+          <span class="range-val" id="sip-amount-val">&#8377;5,000</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Expected Annual Return (%)</label>
+        <div class="range-wrap">
+          <input type="range" id="sip-rate" min="5" max="25" step="0.5" value="12" oninput="calcSIP()">
+          <span class="range-val" id="sip-rate-val">12.0%</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Investment Period (Years)</label>
+        <div class="range-wrap">
+          <input type="range" id="sip-years" min="1" max="40" step="1" value="10" oninput="calcSIP()">
+          <span class="range-val" id="sip-years-val">10 yrs</span>
+        </div>
+      </div>
+    </div>
+    <div class="calc-result">
+      <h3>Estimated Corpus</h3>
+      <div class="result-big" id="sip-result">&#8377;11.62L</div>
+      <div class="result-sub" id="sip-sub">after 10 years</div>
+      <div class="result-breakdown">
+        <div class="rb-item"><span class="rb-label">Total Invested</span><span class="rb-val" id="sip-invested">&#8377;6,00,000</span></div>
+        <div class="rb-item"><span class="rb-label">Wealth Gained</span><span class="rb-val" id="sip-gain">&#8377;5,61,695</span></div>
+        <div class="rb-item"><span class="rb-label">Total Value</span><span class="rb-val" id="sip-total">&#8377;11,61,695</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-wrap">
+    <div class="video-label">
+      <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#ff0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      Video: How SIP Works &amp; Why You Should Start Now (YouTube)
+    </div>
+    <div class="video-iframe-wrap">
+      <iframe src="https://www.youtube.com/embed/UiSNHBQlMb0?rel=0&modestbranding=1" title="What is SIP? How Systematic Investment Plan Works in India" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="video-caption">&#9432; A clear explanation of how SIP works in India, with real examples of how small monthly investments grow into large wealth over time.</div>
+  </div>
+
+  <!-- ═══ ARTICLE CONTENT ═══ -->
+  <div class="calc-content">
+    <h2>What is a SIP and Why Should You Start One?</h2>
+    <p>SIP stands for <strong>Systematic Investment Plan</strong>. It is the simplest way to invest in mutual funds &#8212; instead of putting a large amount in all at once, you invest a small fixed amount every month (as little as &#8377;500) into a mutual fund scheme of your choice. The amount is auto-debited from your bank account on a fixed date, so it becomes a painless financial habit.</p>
+    <p>Over time, SIP harnesses two powerful forces: <strong>rupee cost averaging</strong> (buying more units when markets are low, fewer when high) and <strong>compounding</strong> (your returns earning further returns). Combined, these two forces can turn even modest monthly investments into significant wealth over 10–20 years.</p>
+
+    <div class="info-strip">
+      <div class="info-strip-card">
+        <div class="icon">&#128197;</div>
+        <h4>Start Early</h4>
+        <p>Starting a &#8377;3,000/month SIP at age 25 builds far more wealth than starting &#8377;6,000/month at 35 — even though you invest the same total amount. Time is the most powerful factor.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#128200;</div>
+        <h4>Stay Invested in Dips</h4>
+        <p>Don't stop SIP when markets fall. Market dips are actually opportunities — your &#8377;5,000 buys more units at lower prices, setting you up for bigger gains when markets recover.</p>
+      </div>
+      <div class="info-strip-card">
+        <div class="icon">&#9989;</div>
+        <h4>12% is Realistic</h4>
+        <p>Long-term diversified equity mutual funds in India have historically returned 11–14% annually over 10+ year periods. 12% is a reasonable planning assumption for illustrations.</p>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <strong>SIP Future Value Formula:</strong><br/>
+      <code>FV = P &times; ((1+r)&#x207F; &#8722; 1) &divide; r &times; (1+r)</code><br/><br/>
+      Where <code>P</code> = Monthly SIP amount &nbsp;|&nbsp; <code>r</code> = Monthly rate (annual rate &#247; 12 &#247; 100) &nbsp;|&nbsp; <code>n</code> = Total months invested
+    </div>
+
+    <h2>The Real Power of SIP: A Side-by-Side Comparison</h2>
+    <p>The numbers below show the actual difference that time and amount make. Every scenario uses a 12% expected return — a realistic long-term estimate for diversified equity funds.</p>
+
+    <table class="example-table">
+      <thead>
+        <tr>
+          <th>Monthly SIP</th>
+          <th>Period</th>
+          <th>Total Invested</th>
+          <th>Estimated Corpus</th>
+          <th>Wealth Gained</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#8377;2,000</td>
+          <td>10 years</td>
+          <td>&#8377;2,40,000</td>
+          <td><strong>&#8377;4.65L</strong></td>
+          <td>&#8377;2.25L</td>
+        </tr>
+        <tr>
+          <td>&#8377;5,000</td>
+          <td>10 years</td>
+          <td>&#8377;6,00,000</td>
+          <td><strong>&#8377;11.62L</strong></td>
+          <td>&#8377;5.62L</td>
+        </tr>
+        <tr>
+          <td>&#8377;5,000</td>
+          <td>20 years</td>
+          <td>&#8377;12,00,000</td>
+          <td><strong>&#8377;50.0L</strong></td>
+          <td>&#8377;38.0L</td>
+        </tr>
+        <tr>
+          <td>&#8377;10,000</td>
+          <td>20 years</td>
+          <td>&#8377;24,00,000</td>
+          <td><strong>&#8377;1.00Cr</strong></td>
+          <td>&#8377;76.0L</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Notice how a &#8377;10,000/month SIP over 20 years crosses <strong>&#8377;1 crore</strong> — and you only invested &#8377;24 lakh of your own money. The remaining &#8377;76 lakh is pure wealth created by compounding. This is why financial experts call compounding "the eighth wonder of the world."</p>
+
+    <div class="tip-box">
+      <strong>&#128161; Local tip for Cuttack and Bhubaneswar residents:</strong> You do not need a broker or a DEMAT account to start a SIP. Download <strong>Groww, Zerodha Coin, or Paytm Money</strong> on your smartphone. Complete KYC with just your Aadhaar and PAN (takes 10 minutes). Minimum SIP is &#8377;100–500/month at most funds. You can stop, pause, or change your SIP amount anytime.
+    </div>
+
+    <h2>SIP vs Lump Sum — Which is Better for You?</h2>
+    <p>If you have a large amount ready to invest (say, &#8377;5 lakh from a bonus or property sale), should you invest it all at once, or spread it through a monthly SIP? The honest answer depends on the situation:</p>
+    <ul>
+      <li><strong>Choose SIP if</strong> you earn a regular salary and want to invest monthly out of your income. SIP removes the need to "time the market" and builds discipline automatically.</li>
+      <li><strong>Choose lump sum if</strong> markets have just seen a sharp correction (major fall) and you have extra savings available. Historically, lump-sum investing after a 20–30% market fall has produced excellent returns.</li>
+      <li><strong>Best of both:</strong> Many experienced investors do both — a regular monthly SIP for discipline, and an occasional lump sum during market dips for opportunistic investing.</li>
+    </ul>
+    <p>For most salaried people in Odisha, <strong>starting a SIP is the single most impactful financial decision</strong> you can make today. Even &#8377;2,000/month started right now beats &#8377;5,000/month started three years from now.</p>
+
+    <h2>Which Mutual Fund Category is Right for Your SIP?</h2>
+    <ul>
+      <li><strong>Large-Cap Funds:</strong> Invest in India's top 100 companies. Lower risk, moderate return (10–12%). Best for beginners and conservative investors.</li>
+      <li><strong>Flexi-Cap / Multi-Cap Funds:</strong> Mix of large, mid, and small companies. Balanced risk-return profile (11–14%). Good for most investors with a 5+ year horizon.</li>
+      <li><strong>Mid-Cap Funds:</strong> Higher growth potential but more volatile. Suited for investors comfortable with 2–3 year market swings. Can return 13–16% over the long term.</li>
+      <li><strong>ELSS (Tax Saving) Funds:</strong> Investment up to &#8377;1.5 lakh/year qualifies for tax deduction under Section 80C. 3-year lock-in. Typically large-cap oriented.</li>
+    </ul>
+
+    <div class="dark-tip">
+      <strong>&#128161; Important disclaimer:</strong> Mutual fund returns are market-linked and not guaranteed. The 12% default rate in this calculator is a reasonable long-term estimate for equity funds based on historical Nifty 50 performance. Actual returns may be significantly higher or lower depending on market conditions, fund selection, and time period. Always invest based on your risk tolerance and goals. Consult a SEBI-registered investment advisor if unsure.
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What is rupee cost averaging and how does it benefit SIP investors?</div>
+        <div class="faq-a">Rupee cost averaging is the natural result of investing a fixed amount every month. When markets fall, your &#8377;5,000 buys more mutual fund units. When markets rise, it buys fewer. Over time, this means your average cost per unit is lower than if you had invested the entire amount at a single market high point. It is a built-in protection against poor market timing — a benefit you get automatically with SIP.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I stop my SIP anytime?</div>
+        <div class="faq-a">Yes. Unlike fixed deposits or PPF, there is no lock-in for most SIPs (except ELSS funds which have a 3-year lock-in). You can pause, stop, or withdraw your investment at any time through the app or platform you invest through. Stopping a SIP does not mean losing the money already invested — it simply stops future contributions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is 12% return realistic for SIP in India?</div>
+        <div class="faq-a">For diversified equity mutual funds over 10+ year periods, 11–14% annual returns have been historically typical in India. The Nifty 50 index has delivered roughly 12–13% CAGR over the last 20 years. However, this is the past performance — future returns are not guaranteed. For conservative financial planning, use 10–11% in your calculations. For optimistic projections, 12–14% is reasonable.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the minimum SIP amount in India?</div>
+        <div class="faq-a">The minimum SIP amount is as low as &#8377;100/month for some funds (like Axis Mutual Fund's micro SIP). Most popular funds accept &#8377;500/month as the minimum. For practical wealth-building, &#8377;1,000–2,000/month is the sweet spot for most working-class investors. You can always step up your SIP amount by &#8377;500 or &#8377;1,000 each year as your income grows — many platforms offer an "SIP Step-Up" feature for this.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-disclaimer">&#9432; All calculator results are estimates only. Mutual fund returns are market-linked and not guaranteed. The projected corpus is based on constant returns, which do not reflect real market fluctuations. Past performance of mutual funds does not guarantee future results. Always invest based on your risk tolerance and financial goals. See our <a href="../disclaimer.html">Disclaimer</a>.</div>
+
+  <!-- Related Calculators -->
+  <div class="related-section">
+    <h3>Related Calculators &amp; Guides</h3>
+    <p class="rs-sub">Looking for more financial tools? Explore these free calculators on MoneyTab.in:</p>
+    <div class="related-links">
+      <div class="related-link-item">&#8226; <div><a href="emi-calculator.html">General EMI Calculator</a> <span>&#8212; for personal loans, car loans, and home loans</span></div></div>
+      <div class="related-link-item">&#8226; <div><a href="home-loan-eligibility-calculator.html">Home Loan Eligibility Calculator</a> <span>&#8212; find out how much loan your income qualifies for</span></div></div>
+      <div class="related-link-item">&#8226; <div><a href="gold-loan-calculator.html">Gold Loan Calculator</a> <span>&#8212; check how much you can borrow against your jewellery</span></div></div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="https://moneytab.in" class="footer-logo">Money<span>Tab</span>.in</a>
+      <p>Odisha&#39;s most trusted guide to local finance &#8212; loans, schemes, investments, and calculators. All rates verified at local branches in Cuttack &amp; Bhubaneswar.</p>
+      <div class="footer-social">
+        <a href="https://twitter.com/moneytabin" target="_blank" rel="noopener" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://youtube.com/@moneytabin" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="../loans.html">Local Loans</a></li><li><a href="../investments.html">Investments</a></li>
+      <li><a href="../govt-schemes.html">Govt Schemes</a></li><li><a href="../calculators.html">Calculators</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li><li><a href="../advertise.html">Advertise</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="../privacy-policy.html">Privacy Policy</a></li><li><a href="../cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="../terms.html">Terms of Use</a></li><li><a href="../editorial-policy.html">Editorial Policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-row1">
+      <span class="footer-copy">&#169; 2026 MoneyTab.in &nbsp;&#183;&nbsp; Built with <span class="heart">&#9829;</span> from Cuttack, Odisha</span>
+      <div class="footer-legal-links">
+        <a href="../privacy-policy.html">Privacy</a><a href="../cookie-policy.html">Cookies</a>
+        <a href="../terms.html">Terms</a><a href="../disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer-line">All information on MoneyTab.in is for general informational purposes only. MoneyTab.in is not a financial advisor. See our <a href="../disclaimer.html">Disclaimer</a>.</p>
+  </div>
+</footer>
+
+<div class="cookie-consent" id="cookieBanner">
+  <div class="cookie-consent-inner">
+    <div class="cookie-left">
+      <span class="cookie-icon">&#127850;</span>
+      <div class="cookie-text-wrap">
+        <div class="cookie-title">We use cookies on MoneyTab.in</div>
+        <p class="cookie-text">We use cookies to improve your experience. Read our <a href="../privacy-policy.html">Privacy Policy</a> and <a href="../cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn cookie-settings" id="cookieSettings">Manage</button>
+      <button class="cookie-btn cookie-decline" id="cookieDecline">Reject All</button>
+      <button class="cookie-btn cookie-accept" id="cookieAccept">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click',function(){ document.getElementById('mobileMenu').classList.toggle('open'); });
+  (function(){
+    if(!localStorage.getItem('mtCookieConsent')){ setTimeout(function(){ document.getElementById('cookieBanner').classList.add('show'); }, 600); }
+    document.getElementById('cookieAccept').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','accepted'); document.getElementById('cookieBanner').classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click',function(){ localStorage.setItem('mtCookieConsent','declined'); document.getElementById('cookieBanner').classList.remove('show'); });
+    if(document.getElementById('cookieSettings')){ document.getElementById('cookieSettings').addEventListener('click',function(){ window.location.href='../cookie-policy.html'; }); }
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.faq-item'); var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+  function fmt(n){ return '₹'+Math.round(n).toLocaleString('en-IN'); }
+  function fmtL(n){ if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr'; if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L'; return fmt(n); }
+  function calcSIP(){
+    var m=+document.getElementById('sip-amount').value;
+    var r=+document.getElementById('sip-rate').value/1200;
+    var n=+document.getElementById('sip-years').value*12;
+    document.getElementById('sip-amount-val').textContent=fmt(m);
+    document.getElementById('sip-rate-val').textContent=(r*1200).toFixed(1)+'%';
+    document.getElementById('sip-years-val').textContent=(n/12)+' yrs';
+    var fv=r===0?m*n:m*(Math.pow(1+r,n)-1)/r*(1+r);
+    var invested=m*n; var gain=fv-invested;
+    document.getElementById('sip-result').textContent=fmtL(fv);
+    document.getElementById('sip-sub').textContent='after '+(n/12)+' years';
+    document.getElementById('sip-invested').textContent=fmt(invested);
+    document.getElementById('sip-gain').textContent=fmt(gain);
+    document.getElementById('sip-total').textContent=fmtL(fv);
+  }
+  calcSIP();
+</script>
+</body>
+</html>
